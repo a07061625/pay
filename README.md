@@ -12,6 +12,7 @@
 - 企业微信配置修改SyTrait\WxConfigTrait.php的refreshCorpConfig方法,参考现有的代码替换掉,证书相关设置要去掉证书文件中----包含的部分
 - 已经集成的微信接口,请看Wx\README.md文件
 - 如有疑问,请联系QQ: 837483732
+- 由于时间比较久,部分接口没有写上注释,可以通过在IDE中搜索相关的请求地址来查找对应的接口是否已经集成
 
 ## 调用
     $orderRefund = new \Wx\Shop\Pay\OrderRefund('1111');
