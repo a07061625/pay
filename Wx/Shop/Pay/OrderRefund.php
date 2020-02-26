@@ -117,7 +117,7 @@ class OrderRefund extends WxBaseShop
      */
     public function setTransactionId(string $transactionId)
     {
-        if (ctype_digit($transactionId) && (strlen($transactionId) == 27)) {
+        if (ctype_digit($transactionId) && (strlen($transactionId) == 28)) {
             $this->transaction_id = $transactionId;
         } else {
             throw new WxException('微信订单号不合法', ErrorCode::WX_PARAM_ERROR);
