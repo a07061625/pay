@@ -12,8 +12,8 @@
 
 # 使用
 ## 配置修改
-1. 将php.ini的配置复制到php环境的ini配置中,如果安装seaslog则复制seaslog块的配置,否则无需seaslog块配置
-2. 将caches.ini,wx.ini配置文件复制到php.ini配置的yaconf配置目录下并根据自己情况修改相应的配置
+1. 将configs/php.ini的配置复制到php环境的ini配置中,如果安装seaslog则复制seaslog块的配置,否则无需seaslog块配置
+2. 将configs/caches.ini,configs/wx.ini配置文件复制到php.ini配置的yaconf配置目录下并根据自己情况修改相应的配置
 
 ## 代码修改
 - 根据需要修改autoload.php并保证该文件被初始化,或者将该文件的内容放到框架的初始化里面去
