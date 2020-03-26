@@ -8,7 +8,7 @@
 namespace SyTrait;
 
 use SyConstant\Project;
-use Tool\Tool;
+use SyTool\Tool;
 use Wx\WxConfigAccount;
 use Wx\WxConfigCorp;
 

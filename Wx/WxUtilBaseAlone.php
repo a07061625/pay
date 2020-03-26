@@ -9,7 +9,7 @@ namespace Wx;
 
 use SyConstant\Project;
 use DesignPatterns\Factories\CacheSimpleFactory;
-use Tool\Tool;
+use SyTool\Tool;
 use SyTrait\SimpleTrait;
 use Wx\Alone\AccessToken;
 use Wx\Alone\JsTicket;
