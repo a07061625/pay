@@ -17,7 +17,7 @@
 
 ## 代码修改
 - 根据需要修改autoload.php并保证该文件被初始化,或者将该文件的内容放到框架的初始化里面去
-- 日志用的是seaslog,如果要替换,请参考现有Log\Log.php文件自行替换,最好不要改函数名和参数,改内部实现即可
+- 日志用的是seaslog,如果要替换,请参考现有SyLog\Log.php文件自行替换,最好不要改函数名和参数,改内部实现即可
 - 修改DesignPatterns\Singletons\RedisSingleton.php的init方法,自己设置redis相关配置
 - 第三方开放平台配置修改DesignPatterns\Singletons\WxConfigSingleton.php的getOpenCommonConfig方法,自己设置相关配置
 - 企业微信服务商配置修改DesignPatterns\Singletons\WxConfigSingleton.php的getCorpProviderConfig方法,自己设置相关配置
