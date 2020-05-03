@@ -28,7 +28,7 @@
 - 由于时间比较久,部分接口没有写上注释,可以通过在IDE中搜索相关的请求地址来查找对应的接口是否已经集成
 
 ## 调用
-    $orderRefund = new \Wx\Shop\Pay\OrderRefund('1111');
+    $orderRefund = new \Wx\Payment\Way\OrderRefund('1111');
     $orderRefund->setOutTradeNo('xxx');
     //其他相关设置请参考类的实现
     $res = $orderRefund->getDetail();
