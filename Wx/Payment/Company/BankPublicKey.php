@@ -5,16 +5,16 @@
  * Date: 2018/12/12 0012
  * Time: 17:08
  */
-namespace Wx\Shop\Pay;
+namespace Wx\Payment\Company;
 
 use SyConstant\ErrorCode;
 use DesignPatterns\Singletons\WxConfigSingleton;
 use SyTool\Tool;
-use Wx\WxBaseShop;
+use Wx\WxBasePayment;
+use Wx\WxUtilAccount;
 use Wx\WxUtilBase;
-use Wx\WxUtilShop;
 
-class PayCompanyBankPublicKey extends WxBaseShop
+class BankPublicKey extends WxBasePayment
 {
     /**
      * 公众号ID
@@ -54,7 +54,7 @@ class PayCompanyBankPublicKey extends WxBaseShop
 
     public function getDetail() : array
     {
-        $this->reqData['sign'] = WxUtilShop::createSign($this->reqData, $this->appid);
+        $this->reqData['sign'] = WxUtilAccount::createSign($this->reqData, $this->appid);
 
         $resArr = [
             'code' => 0,

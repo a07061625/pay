@@ -12,7 +12,7 @@ use SyException\Wx\WxException;
 use SyTool\Tool;
 use Wx\WxBaseShop;
 use Wx\WxUtilBase;
-use Wx\WxUtilBaseAlone;
+use Wx\WxUtilAlone;
 
 class TemplateMsgSend extends WxBaseShop
 {
@@ -145,7 +145,7 @@ class TemplateMsgSend extends WxBaseShop
             'code' => 0
         ];
 
-        $this->curlConfigs[CURLOPT_URL] = $this->serviceUrl . WxUtilBaseAlone::getAccessToken($this->appid);
+        $this->curlConfigs[CURLOPT_URL] = $this->serviceUrl . WxUtilAlone::getAccessToken($this->appid);
         $this->curlConfigs[CURLOPT_POSTFIELDS] = Tool::jsonEncode($this->reqData, JSON_UNESCAPED_UNICODE);
         $sendRes = WxUtilBase::sendPostReq($this->curlConfigs);
         $sendData = Tool::jsonDecode($sendRes);
