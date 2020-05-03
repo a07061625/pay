@@ -5,22 +5,18 @@
  * Date: 2018/12/12 0012
  * Time: 9:43
  */
-namespace Wx\Shop\Pay;
+namespace Wx\Payment\Order;
 
 use SyConstant\ErrorCode;
 use DesignPatterns\Singletons\WxConfigSingleton;
 use SyException\Wx\WxException;
 use SyTool\Tool;
-use Wx\WxBaseShop;
+use Wx\WxBasePayment;
+use Wx\WxUtilAccount;
 use Wx\WxUtilBase;
-use Wx\WxUtilShop;
 
-class DownloadFundFlow extends WxBaseShop
+class PayCommentQueryBatch extends WxBasePayment
 {
-    const ACCOUNT_TYPE_BASIC = 'Basic';
-    const ACCOUNT_TYPE_OPERATION = 'Operation';
-    const ACCOUNT_TYPE_FEES = 'Fees';
-
     /**
      * 公众号ID
      * @var string
@@ -42,45 +38,42 @@ class DownloadFundFlow extends WxBaseShop
      */
     private $sign_type = '';
     /**
-     * 资金账单日期
+     * 开始时间
      * @var string
      */
-    private $bill_date = '';
+    private $begin_time = '';
     /**
-     * 资金账户类型
+     * 结束时间
      * @var string
      */
-    private $account_type = '';
+    private $end_time = '';
     /**
-     * 压缩账单
-     * @var string
+     * 位移
+     * @var int
      */
-    private $tar_type = '';
+    private $offset = 0;
+    /**
+     * 条数
+     * @var int
+     */
+    private $limit = 0;
     /**
      * 输出文件全名
      * @var string
      */
     private $output_file = '';
-    /**
-     * 资金账户类型列表
-     * @var array
-     */
-    private static $totalAccountType = [
-        self::ACCOUNT_TYPE_BASIC => 1,
-        self::ACCOUNT_TYPE_OPERATION => 1,
-        self::ACCOUNT_TYPE_FEES => 1,
-    ];
 
     public function __construct(string $appId)
     {
         parent::__construct();
-        $this->serviceUrl = 'https://api.mch.weixin.qq.com/pay/downloadfundflow';
+        $this->serviceUrl = 'https://api.mch.weixin.qq.com/billcommentsp/batchquerycomment';
         $shopConfig = WxConfigSingleton::getInstance()->getShopConfig($appId);
         $this->reqData['appid'] = $shopConfig->getAppId();
         $this->reqData['mch_id'] = $shopConfig->getPayMchId();
         $this->reqData['nonce_str'] = Tool::createNonceStr(32, 'numlower');
         $this->reqData['sign_type'] = 'HMAC-SHA256';
-        $this->reqData['tar_type'] = 'GZIP';
+        $this->reqData['offset'] = 0;
+        $this->reqData['limit'] = 100;
     }
 
     private function __clone()
@@ -88,28 +81,47 @@ class DownloadFundFlow extends WxBaseShop
     }
 
     /**
-     * @param string $billDate
+     * @param int $beginTime
+     * @param int $endTime
      * @throws \SyException\Wx\WxException
      */
-    public function setBillDate(string $billDate)
+    public function setTime(int $beginTime, int $endTime)
     {
-        if (ctype_digit($billDate) && (strlen($billDate) == 8)) {
-            $this->reqData['bill_date'] = $billDate;
+        if ($beginTime <= 0) {
+            throw new WxException('开始时间不合法', ErrorCode::WX_PARAM_ERROR);
+        } elseif ($endTime <= 0) {
+            throw new WxException('结束时间不合法', ErrorCode::WX_PARAM_ERROR);
+        } elseif ($beginTime > $endTime) {
+            throw new WxException('结束时间不能小于开始时间', ErrorCode::WX_PARAM_ERROR);
+        }
+
+        $this->reqData['begin_time'] = date('YmdHis', $beginTime);
+        $this->reqData['end_time'] = date('YmdHis', $endTime);
+    }
+
+    /**
+     * @param int $offset
+     * @throws \SyException\Wx\WxException
+     */
+    public function setOffset(int $offset)
+    {
+        if ($offset >= 0) {
+            $this->reqData['offset'] = $offset;
         } else {
-            throw new WxException('资金账单日期不合法', ErrorCode::WX_PARAM_ERROR);
+            throw new WxException('位移不合法', ErrorCode::WX_PARAM_ERROR);
         }
     }
 
     /**
-     * @param string $accountType
+     * @param int $limit
      * @throws \SyException\Wx\WxException
      */
-    public function setAccountType(string $accountType)
+    public function setLimit(int $limit)
     {
-        if (isset(self::$totalAccountType[$accountType])) {
-            $this->reqData['account_type'] = $accountType;
+        if (($limit > 0) && ($limit <= 200)) {
+            $this->reqData['limit'] = $limit;
         } else {
-            throw new WxException('资金账户类型不合法', ErrorCode::WX_PARAM_ERROR);
+            throw new WxException('条数不合法', ErrorCode::WX_PARAM_ERROR);
         }
     }
 
@@ -125,16 +137,16 @@ class DownloadFundFlow extends WxBaseShop
 
     public function getDetail() : array
     {
-        if (!isset($this->reqData['bill_date'])) {
-            throw new WxException('资金账单日期不能为空', ErrorCode::WX_PARAM_ERROR);
+        if (!isset($this->reqData['begin_time'])) {
+            throw new WxException('开始时间不能为空', ErrorCode::WX_PARAM_ERROR);
         }
-        if (!isset($this->reqData['account_type'])) {
-            throw new WxException('资金账户类型不能为空', ErrorCode::WX_PARAM_ERROR);
+        if (!isset($this->reqData['end_time'])) {
+            throw new WxException('结束时间不能为空', ErrorCode::WX_PARAM_ERROR);
         }
         if (strlen($this->output_file) == 0) {
             throw new WxException('输出文件不能为空', ErrorCode::WX_PARAM_ERROR);
         }
-        $this->reqData['sign'] = WxUtilShop::createSign($this->reqData, $this->reqData['appid'], 'sha256');
+        $this->reqData['sign'] = WxUtilAccount::createSign($this->reqData, $this->reqData['appid'], 'sha256');
 
         $resArr = [
             'code' => 0

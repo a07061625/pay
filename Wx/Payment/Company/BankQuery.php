@@ -5,17 +5,17 @@
  * Date: 2018/12/12 0012
  * Time: 17:08
  */
-namespace Wx\Shop\Pay;
+namespace Wx\Payment\Company;
 
 use SyConstant\ErrorCode;
 use DesignPatterns\Singletons\WxConfigSingleton;
 use SyException\Wx\WxException;
 use SyTool\Tool;
-use Wx\WxBaseShop;
+use Wx\WxBasePayment;
+use Wx\WxUtilAccount;
 use Wx\WxUtilBase;
-use Wx\WxUtilShop;
 
-class PayCompanyBankQuery extends WxBaseShop
+class BankQuery extends WxBasePayment
 {
     /**
      * 公众号ID
@@ -70,7 +70,7 @@ class PayCompanyBankQuery extends WxBaseShop
         if (!isset($this->reqData['partner_trade_no'])) {
             throw new WxException('付款单号不能为空', ErrorCode::WX_PARAM_ERROR);
         }
-        $this->reqData['sign'] = WxUtilShop::createSign($this->reqData, $this->appid);
+        $this->reqData['sign'] = WxUtilAccount::createSign($this->reqData, $this->appid);
 
         $resArr = [
             'code' => 0,

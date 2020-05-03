@@ -2,21 +2,27 @@
 /**
  * Created by PhpStorm.
  * User: 姜伟
- * Date: 2018/12/11 0011
- * Time: 20:08
+ * Date: 18-9-11
+ * Time: 下午7:35
  */
-namespace Wx\Shop\Pay;
+namespace Wx\Payment\Company;
 
 use SyConstant\ErrorCode;
 use DesignPatterns\Singletons\WxConfigSingleton;
 use SyException\Wx\WxException;
+use SyLog\Log;
 use SyTool\Tool;
-use Wx\WxBaseShop;
+use Wx\WxBasePayment;
+use Wx\WxUtilAccount;
 use Wx\WxUtilBase;
-use Wx\WxUtilShop;
 
-class RedPackInfo extends WxBaseShop
+class Query extends WxBasePayment
 {
+    /**
+     * 公众账号ID
+     * @var string
+     */
+    private $appid = '';
     /**
      * 随机字符串
      * @var string
@@ -26,59 +32,49 @@ class RedPackInfo extends WxBaseShop
      * 商户订单号
      * @var string
      */
-    private $mch_billno = '';
+    private $partner_trade_no = '';
     /**
      * 商户号
      * @var string
      */
     private $mch_id = '';
-    /**
-     * 公众账号app id
-     * @var string
-     */
-    private $appid = '';
-    /**
-     * 订单类型
-     * @var string
-     */
-    private $bill_type = '';
 
     public function __construct(string $appId)
     {
         parent::__construct();
-        $this->serviceUrl = 'https://api.mch.weixin.qq.com/mmpaymkttransfers/gethbinfo';
+        $this->serviceUrl = 'https://api.mch.weixin.qq.com/mmpaymkttransfers/gettransferinfo';
         $shopConfig = WxConfigSingleton::getInstance()->getShopConfig($appId);
-        $this->reqData['nonce_str'] = Tool::createNonceStr(32, 'numlower');
-        $this->reqData['mch_id'] = $shopConfig->getPayMchId();
         $this->reqData['appid'] = $shopConfig->getAppId();
-        $this->reqData['bill_type'] = 'MCHT';
+        $this->reqData['mch_id'] = $shopConfig->getPayMchId();
+        $this->reqData['nonce_str'] = Tool::createNonceStr(32, 'numlower');
     }
-    private function __clone()
+
+    public function __clone()
     {
     }
 
     /**
-     * @param string $mchBillNo
+     * @param string $outTradeNo
      * @throws \SyException\Wx\WxException
      */
-    public function setMchBillNo(string $mchBillNo)
+    public function setOutTradeNo(string $outTradeNo)
     {
-        if (ctype_alnum($mchBillNo) && (strlen($mchBillNo) <= 32)) {
-            $this->reqData['mch_billno'] = $mchBillNo;
+        if (ctype_digit($outTradeNo) && (strlen($outTradeNo) <= 32)) {
+            $this->reqData['partner_trade_no'] = $outTradeNo;
         } else {
-            throw new WxException('商户订单号不合法', ErrorCode::WX_PARAM_ERROR);
+            throw new WxException('商户单号不合法', ErrorCode::WX_PARAM_ERROR);
         }
     }
 
     public function getDetail() : array
     {
-        if (!isset($this->reqData['mch_billno'])) {
-            throw new WxException('商户订单号不能为空', ErrorCode::WX_PARAM_ERROR);
+        if (!isset($this->reqData['partner_trade_no'])) {
+            throw new WxException('商户单号不能为空', ErrorCode::WX_PARAM_ERROR);
         }
-        $this->reqData['sign'] = WxUtilShop::createSign($this->reqData, $this->reqData['appid']);
+        $this->reqData['sign'] = WxUtilAccount::createSign($this->reqData, $this->reqData['appid']);
 
         $resArr = [
-            'code' => 0
+            'code' => 0,
         ];
 
         $shopConfig = WxConfigSingleton::getInstance()->getShopConfig($this->reqData['appid']);
@@ -99,9 +95,11 @@ class RedPackInfo extends WxBaseShop
         fclose($tmpCert);
         $sendData = Tool::xmlToArray($sendRes);
         if ($sendData['return_code'] == 'FAIL') {
+            Log::error($sendData['return_msg'], ErrorCode::WX_PARAM_ERROR);
             $resArr['code'] = ErrorCode::WX_POST_ERROR;
             $resArr['message'] = $sendData['return_msg'];
         } elseif ($sendData['result_code'] == 'FAIL') {
+            Log::error($sendData['err_code_des'], ErrorCode::WX_PARAM_ERROR);
             $resArr['code'] = ErrorCode::WX_POST_ERROR;
             $resArr['message'] = $sendData['err_code_des'];
         } else {

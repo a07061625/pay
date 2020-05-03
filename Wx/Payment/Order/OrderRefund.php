@@ -5,17 +5,17 @@
  * Date: 18-9-11
  * Time: 下午10:59
  */
-namespace Wx\Shop\Pay;
+namespace Wx\Payment\Order;
 
 use SyConstant\ErrorCode;
 use DesignPatterns\Singletons\WxConfigSingleton;
 use SyException\Wx\WxException;
 use SyTool\Tool;
-use Wx\WxBaseShop;
+use Wx\WxBasePayment;
+use Wx\WxUtilAccount;
 use Wx\WxUtilBase;
-use Wx\WxUtilShop;
 
-class OrderRefund extends WxBaseShop
+class OrderRefund extends WxBasePayment
 {
     /**
      * 公众号ID
@@ -176,7 +176,7 @@ class OrderRefund extends WxBaseShop
         }
     }
 
-    public function getDetail() : array
+    public function getDetail(): array
     {
         if (strlen($this->transaction_id) > 0) {
             $this->reqData['transaction_id'] = $this->transaction_id;
@@ -195,7 +195,7 @@ class OrderRefund extends WxBaseShop
         } elseif ($this->reqData['refund_fee'] > $this->reqData['total_fee']) {
             throw new WxException('订单金额必须大于等于退款金额', ErrorCode::WX_PARAM_ERROR);
         }
-        $this->reqData['sign'] = WxUtilShop::createSign($this->reqData, $this->reqData['appid']);
+        $this->reqData['sign'] = WxUtilAccount::createSign($this->reqData, $this->reqData['appid']);
 
         $resArr = [
             'code' => 0
