@@ -62,13 +62,13 @@ class WxConfigAccount
     private $payAuthUrl = '';
 
     /**
-     * CERT PEM证书内容,去掉前后----包含的部分
+     * CERT PEM证书内容,保持和原文件相同
      * @var string
      */
     private $sslCert = '';
 
     /**
-     * KEY PEM证书内容,去掉前后----包含的部分
+     * KEY PEM证书内容,保持和原文件相同
      * @var string
      */
     private $sslKey = '';
@@ -81,7 +81,7 @@ class WxConfigAccount
     private $sslSerialNo = '';
 
     /**
-     * 企业付款银行卡公钥内容,去掉前后----包含的部分
+     * 企业付款银行卡公钥内容
      * @var string
      */
     private $sslCompanyBank = '';
