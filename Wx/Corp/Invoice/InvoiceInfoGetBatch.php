@@ -10,6 +10,7 @@ use Wx\WxUtilBase;
 
 /**
  * 批量查询电子发票
+ *
  * @package Wx\Corp\Invoice
  */
 class InvoiceInfoGetBatch extends WxBaseCorp
@@ -18,6 +19,7 @@ class InvoiceInfoGetBatch extends WxBaseCorp
 
     /**
      * 发票列表
+     *
      * @var array
      */
     private $item_list = [];
@@ -37,6 +39,7 @@ class InvoiceInfoGetBatch extends WxBaseCorp
 
     /**
      * @param array $itemList
+     *
      * @throws \SyException\Wx\WxException
      */
     public function setItemList(array $itemList)
