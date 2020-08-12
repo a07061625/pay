@@ -57,6 +57,14 @@ class ErrorCode
     const WXPROVIDER_CORP_POST_ERROR = 104701;
     const WXPROVIDER_CORP_GET_ERROR = 104702;
 
+    //支付错误,取值范围:107500-107999
+    const PAY_PARAM_ERROR = 107500;
+    const PAY_REQ_ERROR = 107501;
+    const PAY_PAYPAL_PARAM_ERROR = 107510;
+    const PAY_PAYPAL_REQ_ERROR = 107511;
+    const PAY_UNION_PARAM_ERROR = 107520;
+    const PAY_UNION_REQ_ERROR = 107521;
+
     protected static $msgArr = [
         self::COMMON_SUCCESS => '成功',
         self::COMMON_PARAM_ERROR => '参数错误',
@@ -89,6 +97,12 @@ class ErrorCode
         self::WXPROVIDER_CORP_PARAM_ERROR => '企业微信服务商参数错误',
         self::WXPROVIDER_CORP_POST_ERROR => '企业微信服务商发送POST请求出错',
         self::WXPROVIDER_CORP_GET_ERROR => '企业微信服务商发送GET请求出错',
+        self::PAY_PARAM_ERROR => '支付参数错误',
+        self::PAY_REQ_ERROR => '支付请求出错',
+        self::PAY_PAYPAL_PARAM_ERROR => '贝宝支付参数错误',
+        self::PAY_PAYPAL_REQ_ERROR => '贝宝支付请求出错',
+        self::PAY_UNION_PARAM_ERROR => '银联支付参数错误',
+        self::PAY_UNION_REQ_ERROR => '银联支付请求出错',
     ];
 
     /**
