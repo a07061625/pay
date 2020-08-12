@@ -93,7 +93,9 @@ class ErrorCode
 
     /**
      * 获取错误信息
+     *
      * @param int $errorCode 错误码
+     *
      * @return mixed|string
      */
     public static function getMsg(int $errorCode)

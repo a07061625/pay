@@ -15,6 +15,7 @@ class AuthTokenQuery extends AliPayBase
 {
     /**
      * 应用授权令牌
+     *
      * @var string
      */
     private $app_auth_token = '';
@@ -31,6 +32,7 @@ class AuthTokenQuery extends AliPayBase
 
     /**
      * @param string $appAuthToken
+     *
      * @throws \SyException\AliPay\AliPayAuthException
      */
     public function setAppAuthToken(string $appAuthToken)

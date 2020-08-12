@@ -20,11 +20,13 @@ class BillDownload extends AliPayBase
 
     /**
      * 账单类型
+     *
      * @var string
      */
     private $bill_type = '';
     /**
      * 账单时间：日账单格式为yyyy-MM-dd，月账单格式为yyyy-MM
+     *
      * @var string
      */
     private $bill_date = '';
@@ -41,6 +43,7 @@ class BillDownload extends AliPayBase
 
     /**
      * @param string $billType
+     *
      * @throws \SyException\AliPay\AliPayPayException
      */
     public function setBillType(string $billType)
@@ -54,6 +57,7 @@ class BillDownload extends AliPayBase
 
     /**
      * @param string $billDate
+     *
      * @throws \SyException\AliPay\AliPayPayException
      */
     public function setBillDate(string $billDate)

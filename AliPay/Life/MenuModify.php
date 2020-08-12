@@ -15,11 +15,13 @@ class MenuModify extends AliPayBase
 {
     /**
      * 菜单类型
+     *
      * @var string
      */
     private $type = '';
     /**
      * 菜单列表
+     *
      * @var array
      */
     private $button = [];
@@ -36,6 +38,7 @@ class MenuModify extends AliPayBase
 
     /**
      * @param string $type
+     *
      * @throws \SyException\AliPay\AliPayLifeException
      */
     public function setType(string $type)
@@ -49,6 +52,7 @@ class MenuModify extends AliPayBase
 
     /**
      * @param array $button
+     *
      * @throws \SyException\AliPay\AliPayLifeException
      */
     public function addButton(array $button)

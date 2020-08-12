@@ -15,16 +15,19 @@ class MessageSendBatch extends AliPayBase
 {
     /**
      * 消息类型,text:文本消息 image-text:图文消息
+     *
      * @var string
      */
     private $msg_type = '';
     /**
      * 图文消息内容
+     *
      * @var array
      */
     private $articles = [];
     /**
      * 文本消息内容
+     *
      * @var array
      */
     private $text = [];
@@ -41,6 +44,7 @@ class MessageSendBatch extends AliPayBase
 
     /**
      * @param string $msgType
+     *
      * @throws \SyException\AliPay\AliPayLifeException
      */
     public function setMsgType(string $msgType)
@@ -54,6 +58,7 @@ class MessageSendBatch extends AliPayBase
 
     /**
      * @param array $articles
+     *
      * @throws \SyException\AliPay\AliPayLifeException
      */
     public function setArticles(array $articles)
@@ -68,6 +73,7 @@ class MessageSendBatch extends AliPayBase
 
     /**
      * @param array $text
+     *
      * @throws \SyException\AliPay\AliPayLifeException
      */
     public function setText(array $text)

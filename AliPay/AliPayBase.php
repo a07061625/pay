@@ -15,62 +15,74 @@ abstract class AliPayBase
 {
     /**
      * 业务请求参数的集合
+     *
      * @var array
      */
     protected $biz_content = [];
     /**
      * 主动通知地址
+     *
      * @var string
      */
     protected $notify_url = '';
     /**
      * 同步通知地址
+     *
      * @var string
      */
     protected $return_url = '';
 
     /**
      * 跳转基础url地址
+     *
      * @var string
      */
     protected $return_baseurl = '';
     /**
      * 支付宝分配给开发者的应用ID
+     *
      * @var string
      */
     private $app_id = '';
     /**
      * 数据格式
+     *
      * @var string
      */
     private $format = '';
     /**
      * 请求使用的编码格式
+     *
      * @var string
      */
     private $charset = '';
     /**
      * 商户生成签名字符串所使用的签名算法类型，目前支持RSA2和RSA，推荐使用RSA2
+     *
      * @var string
      */
     private $sign_type = '';
     /**
      * 发送请求的时间，格式"yyyy-MM-dd HH:mm:ss"
+     *
      * @var string
      */
     private $timestamp = '';
     /**
      * 调用的接口版本，固定为：1.0
+     *
      * @var string
      */
     private $version = '';
     /**
      * 接口名称
+     *
      * @var string
      */
     private $method = '';
     /**
      * 响应标识
+     *
      * @var string
      */
     private $response_tag = '';
@@ -107,6 +119,7 @@ abstract class AliPayBase
 
     /**
      * @param string $returnUrl
+     *
      * @throws \SyException\AliPay\AliPayPayException
      */
     public function setReturnUrl(string $returnUrl)
@@ -120,6 +133,7 @@ abstract class AliPayBase
 
     /**
      * 获取详情信息
+     *
      * @return array
      */
     abstract public function getDetail() : array;
@@ -152,6 +166,7 @@ abstract class AliPayBase
             $content['return_url'] = $this->return_url;
         }
         $content['sign'] = AliPayUtilBase::createSign($content, $this->sign_type);
+
         return $content;
     }
 }

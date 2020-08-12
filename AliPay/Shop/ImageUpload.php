@@ -15,21 +15,25 @@ class ImageUpload extends AliPayBase
 {
     /**
      * 图片格式
+     *
      * @var string
      */
     private $image_type = '';
     /**
      * 图片名称
+     *
      * @var string
      */
     private $image_name = '';
     /**
      * 图片二进制内容
+     *
      * @var string
      */
     private $image_content = '';
     /**
      * 图片所属的partnerId
+     *
      * @var string
      */
     private $image_pid = '';
@@ -46,6 +50,7 @@ class ImageUpload extends AliPayBase
 
     /**
      * @param string $imageType
+     *
      * @throws \SyException\AliPay\AliPayShopException
      */
     public function setImageType(string $imageType)
@@ -60,6 +65,7 @@ class ImageUpload extends AliPayBase
 
     /**
      * @param string $imageName
+     *
      * @throws \SyException\AliPay\AliPayShopException
      */
     public function setImageName(string $imageName)
@@ -74,6 +80,7 @@ class ImageUpload extends AliPayBase
 
     /**
      * @param string $imageContent
+     *
      * @throws \SyException\AliPay\AliPayShopException
      */
     public function setImageContent(string $imageContent)
@@ -87,6 +94,7 @@ class ImageUpload extends AliPayBase
 
     /**
      * @param string $imagePid
+     *
      * @throws \SyException\AliPay\AliPayShopException
      */
     public function setImagePid(string $imagePid)

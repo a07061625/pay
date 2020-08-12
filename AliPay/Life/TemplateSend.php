@@ -15,11 +15,13 @@ class TemplateSend extends AliPayBase
 {
     /**
      * 用户ID
+     *
      * @var string
      */
     private $to_user_id = '';
     /**
      * 模板信息
+     *
      * @var array
      */
     private $template = [];
@@ -36,6 +38,7 @@ class TemplateSend extends AliPayBase
 
     /**
      * @param string $userId
+     *
      * @throws \SyException\AliPay\AliPayLifeException
      */
     public function setToUserId(string $userId)
@@ -49,6 +52,7 @@ class TemplateSend extends AliPayBase
 
     /**
      * @param array $template
+     *
      * @throws \SyException\AliPay\AliPayLifeException
      */
     public function setTemplate(array $template)

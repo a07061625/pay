@@ -16,7 +16,9 @@ final class AliPayUtilPay extends AliPayUtilBase
 
     /**
      * 生成网页支付表单
+     *
      * @param \AliPay\Pay\PayWap $wap
+     *
      * @return string
      */
     public static function createWapPayHtml(PayWap $wap) : string
@@ -30,6 +32,7 @@ final class AliPayUtilPay extends AliPayUtilBase
             }
         }
         $html .= '<input type="submit" value="ok" style="display:none;"/></form><script>document.forms["' . $wap->getFormId() . '"].submit();</script>';
+
         return $html;
     }
 }

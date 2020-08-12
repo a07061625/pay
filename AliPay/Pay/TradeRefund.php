@@ -15,26 +15,31 @@ class TradeRefund extends AliPayBase
 {
     /**
      * 商户订单号
+     *
      * @var string
      */
     private $out_trade_no = '';
     /**
      * 支付宝交易号
+     *
      * @var string
      */
     private $trade_no = '';
     /**
      * 退款的金额,该金额不能大于订单金额,单位为分
+     *
      * @var string
      */
     private $refund_amount = '';
     /**
      * 退款的原因说明
+     *
      * @var string
      */
     private $refund_reason = '';
     /**
      * 退款单号
+     *
      * @var string
      */
     private $out_request_no = '';
@@ -51,6 +56,7 @@ class TradeRefund extends AliPayBase
 
     /**
      * @param string $outTradeNo
+     *
      * @throws \SyException\AliPay\AliPayPayException
      */
     public function setOutTradeNo(string $outTradeNo)
@@ -64,6 +70,7 @@ class TradeRefund extends AliPayBase
 
     /**
      * @param string $tradeNo
+     *
      * @throws \SyException\AliPay\AliPayPayException
      */
     public function setTradeNo(string $tradeNo)
@@ -77,6 +84,7 @@ class TradeRefund extends AliPayBase
 
     /**
      * @param int $refundAmount
+     *
      * @throws \SyException\AliPay\AliPayPayException
      */
     public function setRefundAmount(int $refundAmount)
@@ -100,6 +108,7 @@ class TradeRefund extends AliPayBase
 
     /**
      * @param string $refundNo
+     *
      * @throws \SyException\AliPay\AliPayPayException
      */
     public function setRefundNo(string $refundNo)

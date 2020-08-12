@@ -15,6 +15,7 @@ class AdvertCreate extends AliPayBase
 {
     /**
      * 广告内容列表
+     *
      * @var array
      */
     private $advert_items = [];
@@ -32,6 +33,7 @@ class AdvertCreate extends AliPayBase
 
     /**
      * @param array $advertItem
+     *
      * @throws \SyException\AliPay\AliPayLifeException
      */
     public function addAdvertItems(array $advertItem)

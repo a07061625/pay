@@ -15,31 +15,37 @@ class MessageSendSingle extends AliPayBase
 {
     /**
      * 用户ID
+     *
      * @var string
      */
     private $to_user_id = '';
     /**
      * 消息类型,text:文本消息 image-text:图文消息
+     *
      * @var string
      */
     private $msg_type = '';
     /**
      * 图文消息内容
+     *
      * @var array
      */
     private $articles = [];
     /**
      * 文本消息内容
+     *
      * @var array
      */
     private $text = [];
     /**
      * 聊天消息状态 0:非聊天消息,消息显示在生活号主页 1:聊天消息,消息显示在咨询反馈列表页
+     *
      * @var string
      */
     private $chat = '';
     /**
      * 事件类型
+     *
      * @var string
      */
     private $event_type = '';
@@ -57,6 +63,7 @@ class MessageSendSingle extends AliPayBase
 
     /**
      * @param string $userId
+     *
      * @throws \SyException\AliPay\AliPayLifeException
      */
     public function setToUserId(string $userId)
@@ -70,6 +77,7 @@ class MessageSendSingle extends AliPayBase
 
     /**
      * @param string $msgType
+     *
      * @throws \SyException\AliPay\AliPayLifeException
      */
     public function setMsgType(string $msgType)
@@ -83,6 +91,7 @@ class MessageSendSingle extends AliPayBase
 
     /**
      * @param array $articles
+     *
      * @throws \SyException\AliPay\AliPayLifeException
      */
     public function setArticles(array $articles)
@@ -97,6 +106,7 @@ class MessageSendSingle extends AliPayBase
 
     /**
      * @param array $text
+     *
      * @throws \SyException\AliPay\AliPayLifeException
      */
     public function setText(array $text)
@@ -111,6 +121,7 @@ class MessageSendSingle extends AliPayBase
 
     /**
      * @param string $chat
+     *
      * @throws \SyException\AliPay\AliPayLifeException
      */
     public function setChat(string $chat)
@@ -124,6 +135,7 @@ class MessageSendSingle extends AliPayBase
 
     /**
      * @param string $eventType
+     *
      * @throws \SyException\AliPay\AliPayLifeException
      */
     public function setEventType(string $eventType)

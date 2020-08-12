@@ -15,11 +15,13 @@ class ShopQueryDetail extends AliPayBase
 {
     /**
      * 门店ID
+     *
      * @var string
      */
     private $shop_id = '';
     /**
      * 操作人角色
+     *
      * @var string
      */
     private $op_role = '';
@@ -36,6 +38,7 @@ class ShopQueryDetail extends AliPayBase
 
     /**
      * @param string $shopId
+     *
      * @throws \SyException\AliPay\AliPayShopException
      */
     public function setShopId(string $shopId)
@@ -49,6 +52,7 @@ class ShopQueryDetail extends AliPayBase
 
     /**
      * @param string $opRole
+     *
      * @throws \SyException\AliPay\AliPayShopException
      */
     public function setOpRole(string $opRole)

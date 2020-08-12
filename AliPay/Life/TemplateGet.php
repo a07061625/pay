@@ -15,6 +15,7 @@ class TemplateGet extends AliPayBase
 {
     /**
      * 模板ID
+     *
      * @var string
      */
     private $template_id = '';
@@ -31,6 +32,7 @@ class TemplateGet extends AliPayBase
 
     /**
      * @param string $templateId
+     *
      * @throws \SyException\AliPay\AliPayLifeException
      */
     public function setTemplateId(string $templateId)

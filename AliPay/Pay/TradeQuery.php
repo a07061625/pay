@@ -15,11 +15,13 @@ class TradeQuery extends AliPayBase
 {
     /**
      * 商户订单号
+     *
      * @var string
      */
     private $out_trade_no = '';
     /**
      * 支付宝交易号
+     *
      * @var string
      */
     private $trade_no = '';
@@ -36,6 +38,7 @@ class TradeQuery extends AliPayBase
 
     /**
      * @param string $outTradeNo
+     *
      * @throws \SyException\AliPay\AliPayPayException
      */
     public function setOutTradeNo(string $outTradeNo)
@@ -49,6 +52,7 @@ class TradeQuery extends AliPayBase
 
     /**
      * @param string $tradeNo
+     *
      * @throws \SyException\AliPay\AliPayPayException
      */
     public function setTradeNo(string $tradeNo)

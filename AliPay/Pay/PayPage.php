@@ -8,8 +8,8 @@
 namespace AliPay\Pay;
 
 use AliPay\AliPayBase;
-use SyConstant\ErrorCode;
 use DesignPatterns\Singletons\AliPayConfigSingleton;
+use SyConstant\ErrorCode;
 use SyException\AliPay\AliPayPayException;
 use SyTool\Tool;
 
@@ -17,131 +17,157 @@ class PayPage extends AliPayBase
 {
     /**
      * 商户订单号
+     *
      * @var string
      */
     private $out_trade_no = '';
     /**
      * 销售产品码
+     *
      * @var string
      */
     private $product_code = '';
     /**
      * 订单总金额,单位为分
+     *
      * @var int
      */
     private $total_amount = 0;
     /**
      * 订单标题
+     *
      * @var string
      */
     private $subject = '';
     /**
      * 订单描述
+     *
      * @var string
      */
     private $body = '';
     /**
      * 绝对超时时间戳
+     *
      * @var int
      */
     private $time_expire = 0;
     /**
      * 商品信息
+     *
      * @var array
      */
     private $goods_detail = [];
     /**
      * 公用回传参数
+     *
      * @var array
      */
     private $passback_params = [];
     /**
      * 业务扩展参数
+     *
      * @var array
      */
     private $extend_params = [];
     /**
      * 商品主类型 0:虚拟类商品 1:实物类商品
+     *
      * @var string
      */
     private $goods_type = '';
     /**
      * 允许的最晚付款时间
+     *
      * @var string
      */
     private $timeout_express = '';
     /**
      * 优惠参数
+     *
      * @var array
      */
     private $promo_params = [];
     /**
      * 分账信息
+     *
      * @var array
      */
     private $royalty_info = [];
     /**
      * 受理商户信息
+     *
      * @var array
      */
     private $sub_merchant = [];
     /**
      * 可用渠道
+     *
      * @var array
      */
     private $enable_pay_channels = [];
     /**
      * 门店编号
+     *
      * @var string
      */
     private $store_id = '';
     /**
      * 禁用渠道
+     *
      * @var array
      */
     private $disable_pay_channels = [];
     /**
      * 扫码支付方式
+     *
      * @var string
      */
     private $qr_pay_mode = '';
     /**
      * 二维码宽度
+     *
      * @var int
      */
     private $qrcode_width = 0;
     /**
      * 结算信息
+     *
      * @var array
      */
     private $settle_info = [];
     /**
      * 开票信息
+     *
      * @var array
      */
     private $invoice_info = [];
     /**
      * 签约参数
+     *
      * @var array
      */
     private $agreement_sign_params = [];
     /**
      * 页面集成方式
+     *
      * @var string
      */
     private $integration_type = '';
     /**
      * 请求来源地址
+     *
      * @var string
      */
     private $request_from_url = '';
     /**
      * 业务信息
+     *
      * @var array
      */
     private $business_params = [];
     /**
      * 外部指定买家信息
+     *
      * @var array
      */
     private $ext_user_info = [];
@@ -165,6 +191,7 @@ class PayPage extends AliPayBase
 
     /**
      * @param string $outTradeNo
+     *
      * @throws \SyException\AliPay\AliPayPayException
      */
     public function setOutTradeNo(string $outTradeNo)
@@ -178,6 +205,7 @@ class PayPage extends AliPayBase
 
     /**
      * @param int $totalAmount
+     *
      * @throws \SyException\AliPay\AliPayPayException
      */
     public function setTotalAmount(int $totalAmount)
@@ -191,6 +219,7 @@ class PayPage extends AliPayBase
 
     /**
      * @param string $subject
+     *
      * @throws \SyException\AliPay\AliPayPayException
      */
     public function setSubject(string $subject)
@@ -213,6 +242,7 @@ class PayPage extends AliPayBase
 
     /**
      * @param int $timeExpire
+     *
      * @throws \SyException\AliPay\AliPayPayException
      */
     public function setTimeExpire(int $timeExpire)
@@ -256,6 +286,7 @@ class PayPage extends AliPayBase
 
     /**
      * @param string $goodsType
+     *
      * @throws \SyException\AliPay\AliPayPayException
      */
     public function setGoodsType(string $goodsType)
@@ -309,7 +340,7 @@ class PayPage extends AliPayBase
 
     /**
      * @param array $payChannels
-     * @param int $channelType
+     * @param int   $channelType
      */
     public function setPayChannels(array $payChannels, int $channelType)
     {
@@ -332,6 +363,7 @@ class PayPage extends AliPayBase
 
     /**
      * @param string $qrPayMode
+     *
      * @throws \SyException\AliPay\AliPayPayException
      */
     public function setQrPayMode(string $qrPayMode)
@@ -385,6 +417,7 @@ class PayPage extends AliPayBase
 
     /**
      * @param string $integrationType
+     *
      * @throws \SyException\AliPay\AliPayPayException
      */
     public function setIntegrationType(string $integrationType)

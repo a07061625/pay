@@ -7,8 +7,8 @@
  */
 namespace AliPay;
 
-use SyConstant\ErrorCode;
 use DesignPatterns\Singletons\AliPayConfigSingleton;
+use SyConstant\ErrorCode;
 use SyException\AliPay\AliPayPayException;
 use SyLog\Log;
 use SyTool\Tool;
@@ -22,8 +22,10 @@ abstract class AliPayUtilBase
 
     /**
      * 生成签名字符串
-     * @param array $data 数据数组
+     *
+     * @param array  $data     数据数组
      * @param string $signType 签名方式，只支持RSA和RSA2
+     *
      * @return string
      */
     public static function createSign(array $data, string $signType = 'RSA') : string
@@ -41,9 +43,11 @@ abstract class AliPayUtilBase
 
     /**
      * 校验签名
-     * @param array $data 数据数组
+     *
+     * @param array  $data       数据数组
      * @param string $verifyType 校验类型 1：不校验数据签名类型 2：校验数据签名类型
-     * @param string $signType 签名类型,只支持RSA和RSA2
+     * @param string $signType   签名类型,只支持RSA和RSA2
+     *
      * @return bool
      */
     public static function verifyData(array $data, string $verifyType = '1', string $signType = 'RSA') : bool
@@ -71,7 +75,9 @@ abstract class AliPayUtilBase
 
     /**
      * 发送服务请求
+     *
      * @param \AliPay\AliPayBase $aliBase
+     *
      * @return array
      */
     public static function sendServiceRequest(AliPayBase $aliBase)
@@ -105,7 +111,9 @@ abstract class AliPayUtilBase
 
     /**
      * 校验$value是否非空
+     *
      * @param mixed $value
+     *
      * @return bool true：空 false:非空
      */
     protected static function checkEmpty($value) : bool
@@ -125,8 +133,10 @@ abstract class AliPayUtilBase
 
     /**
      * 转换字符集编码
-     * @param mixed $data
+     *
+     * @param mixed  $data
      * @param string $targetCharset
+     *
      * @return string
      */
     protected static function convertCharset($data, $targetCharset)
@@ -142,7 +152,9 @@ abstract class AliPayUtilBase
 
     /**
      * 获取待签名字符串
+     *
      * @param array $params
+     *
      * @return string
      */
     protected static function getSignContent(array $params) : string
@@ -163,10 +175,13 @@ abstract class AliPayUtilBase
 
     /**
      * 发送POST请求
-     * @param string $url 请求地址
-     * @param array $data 请求参数
-     * @param array $curlConfig curl配置数组
+     *
+     * @param string $url        请求地址
+     * @param array  $data       请求参数
+     * @param array  $curlConfig curl配置数组
+     *
      * @return mixed
+     *
      * @throws \SyException\AliPay\AliPayPayException
      */
     protected static function sendPostReq(string $url, array $data, array $curlConfig = [])
@@ -189,8 +204,8 @@ abstract class AliPayUtilBase
         $sendRes = Tool::sendCurlReq($curlConfig);
         if ($sendRes['res_no'] == 0) {
             return $sendRes['res_content'];
-        } else {
-            throw new AliPayPayException('curl出错，错误码=' . $sendRes['res_no'], ErrorCode::ALIPAY_POST_ERROR);
         }
+
+        throw new AliPayPayException('curl出错，错误码=' . $sendRes['res_no'], ErrorCode::ALIPAY_POST_ERROR);
     }
 }

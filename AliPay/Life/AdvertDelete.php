@@ -15,6 +15,7 @@ class AdvertDelete extends AliPayBase
 {
     /**
      * 广告ID
+     *
      * @var string
      */
     private $advert_id = '';
@@ -31,6 +32,7 @@ class AdvertDelete extends AliPayBase
 
     /**
      * @param string $advertId
+     *
      * @throws \SyException\AliPay\AliPayLifeException
      */
     public function setAdvertId(string $advertId)

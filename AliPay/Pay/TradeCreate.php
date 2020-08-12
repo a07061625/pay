@@ -8,8 +8,8 @@
 namespace AliPay\Pay;
 
 use AliPay\AliPayBase;
-use SyConstant\ErrorCode;
 use DesignPatterns\Singletons\AliPayConfigSingleton;
+use SyConstant\ErrorCode;
 use SyException\AliPay\AliPayPayException;
 use SyTool\Tool;
 
@@ -17,86 +17,103 @@ class TradeCreate extends AliPayBase
 {
     /**
      * 商户订单号
+     *
      * @var string
      */
     private $out_trade_no = '';
     /**
      * 卖家支付宝用户ID
+     *
      * @var string
      */
     private $seller_id = '';
     /**
      * 订单总金额,单位为分
+     *
      * @var int
      */
     private $total_amount = 0;
     /**
      * 可打折金额,单位为分
+     *
      * @var int
      */
     private $discountable_amount = 0;
     /**
      * 订单标题
+     *
      * @var string
      */
     private $subject = '';
     /**
      * 商品描述
+     *
      * @var string
      */
     private $body = '';
     /**
      * 买家支付宝用户ID
+     *
      * @var string
      */
     private $buyer_id = '';
     /**
      * 商品信息
+     *
      * @var array
      */
     private $goods_detail = [];
     /**
      * 操作员编号
+     *
      * @var string
      */
     private $operator_id = '';
     /**
      * 门店编号
+     *
      * @var string
      */
     private $store_id = '';
     /**
      * 终端编号
+     *
      * @var string
      */
     private $terminal_id = '';
     /**
      * 业务扩展参数
+     *
      * @var array
      */
     private $extend_params = [];
     /**
      * 订单允许的最晚付款时间
+     *
      * @var string
      */
     private $timeout_express = '';
     /**
      * 描述结算信息
+     *
      * @var array
      */
     private $settle_info = [];
     /**
      * 业务信息
+     *
      * @var array
      */
     private $business_params = [];
     /**
      * 收货人及地址信息
+     *
      * @var array
      */
     private $receiver_address_info = [];
     /**
      * 物流信息
+     *
      * @var array
      */
     private $logistics_detail = [];
@@ -116,6 +133,7 @@ class TradeCreate extends AliPayBase
 
     /**
      * @param string $outTradeNo
+     *
      * @throws \SyException\AliPay\AliPayPayException
      */
     public function setOutTradeNo(string $outTradeNo)
@@ -129,6 +147,7 @@ class TradeCreate extends AliPayBase
 
     /**
      * @param int $totalAmount
+     *
      * @throws \SyException\AliPay\AliPayPayException
      */
     public function setTotalAmount(int $totalAmount)
@@ -143,6 +162,7 @@ class TradeCreate extends AliPayBase
 
     /**
      * @param int $discountableAmount
+     *
      * @throws \SyException\AliPay\AliPayPayException
      */
     public function setDiscountableAmount(int $discountableAmount)
@@ -157,6 +177,7 @@ class TradeCreate extends AliPayBase
 
     /**
      * @param string $subject
+     *
      * @throws \SyException\AliPay\AliPayPayException
      */
     public function setSubject(string $subject)
@@ -179,6 +200,7 @@ class TradeCreate extends AliPayBase
 
     /**
      * @param string $buyerId
+     *
      * @throws \SyException\AliPay\AliPayPayException
      */
     public function setBuyerId(string $buyerId)

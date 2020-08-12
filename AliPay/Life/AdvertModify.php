@@ -15,11 +15,13 @@ class AdvertModify extends AliPayBase
 {
     /**
      * 广告ID
+     *
      * @var string
      */
     private $advert_id = '';
     /**
      * 广告内容列表
+     *
      * @var array
      */
     private $advert_items = [];
@@ -37,6 +39,7 @@ class AdvertModify extends AliPayBase
 
     /**
      * @param string $advertId
+     *
      * @throws \SyException\AliPay\AliPayLifeException
      */
     public function setAdvertId(string $advertId)
@@ -50,6 +53,7 @@ class AdvertModify extends AliPayBase
 
     /**
      * @param array $advertItem
+     *
      * @throws \SyException\AliPay\AliPayLifeException
      */
     public function addAdvertItems(array $advertItem)

@@ -15,6 +15,7 @@ class GroupDelete extends AliPayBase
 {
     /**
      * 分组ID
+     *
      * @var string
      */
     private $group_id = '';
@@ -31,6 +32,7 @@ class GroupDelete extends AliPayBase
 
     /**
      * @param string $groupId
+     *
      * @throws \SyException\AliPay\AliPayLifeException
      */
     public function setGroupId(string $groupId)

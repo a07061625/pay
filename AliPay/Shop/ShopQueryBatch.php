@@ -15,36 +15,43 @@ class ShopQueryBatch extends AliPayBase
 {
     /**
      * 调用方身份
+     *
      * @var string
      */
     private $op_role = '';
     /**
      * 查询类型
+     *
      * @var string
      */
     private $query_type = '';
     /**
      * 关联商户PID
+     *
      * @var string
      */
     private $related_partner_id = '';
     /**
      * 门店ID
+     *
      * @var string
      */
     private $shop_id = '';
     /**
      * 门店状态
+     *
      * @var array
      */
     private $shop_status = [];
     /**
      * 页码
+     *
      * @var int
      */
     private $page_no = 0;
     /**
      * 每页记录数
+     *
      * @var int
      */
     private $page_size = 0;
@@ -63,6 +70,7 @@ class ShopQueryBatch extends AliPayBase
 
     /**
      * @param string $opRole
+     *
      * @throws \SyException\AliPay\AliPayShopException
      */
     public function setOpRole(string $opRole)
@@ -76,6 +84,7 @@ class ShopQueryBatch extends AliPayBase
 
     /**
      * @param string $queryType
+     *
      * @throws \SyException\AliPay\AliPayShopException
      */
     public function setQueryType(string $queryType)
@@ -89,6 +98,7 @@ class ShopQueryBatch extends AliPayBase
 
     /**
      * @param string $relatedPartnerId
+     *
      * @throws \SyException\AliPay\AliPayShopException
      */
     public function setRelatedPartnerId(string $relatedPartnerId)
@@ -102,6 +112,7 @@ class ShopQueryBatch extends AliPayBase
 
     /**
      * @param string $shopId
+     *
      * @throws \SyException\AliPay\AliPayShopException
      */
     public function setShopId(string $shopId)
@@ -115,6 +126,7 @@ class ShopQueryBatch extends AliPayBase
 
     /**
      * @param string $shopStatus
+     *
      * @throws \SyException\AliPay\AliPayShopException
      */
     public function addShopStatus(string $shopStatus)
@@ -128,6 +140,7 @@ class ShopQueryBatch extends AliPayBase
 
     /**
      * @param int $pageNo
+     *
      * @throws \SyException\AliPay\AliPayShopException
      */
     public function setPageNo(int $pageNo)
@@ -141,6 +154,7 @@ class ShopQueryBatch extends AliPayBase
 
     /**
      * @param int $pageSize
+     *
      * @throws \SyException\AliPay\AliPayShopException
      */
     public function setPageSize(int $pageSize)

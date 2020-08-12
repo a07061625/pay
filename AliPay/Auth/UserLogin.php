@@ -5,23 +5,24 @@
  * Date: 2018/11/1 0001
  * Time: 9:40
  */
-
 namespace AliPay\Auth;
 
 use AliPay\AliPayBase;
-use SyConstant\ErrorCode;
 use DesignPatterns\Singletons\AliPayConfigSingleton;
+use SyConstant\ErrorCode;
 use SyException\AliPay\AliPayAuthException;
 
 class UserLogin extends AliPayBase
 {
     /**
      * 授权类型
+     *
      * @var array
      */
     private $scopes = [];
     /**
      * 校验码
+     *
      * @var string
      */
     private $state = '';
@@ -40,11 +41,12 @@ class UserLogin extends AliPayBase
 
     /**
      * @param string $scope
+     *
      * @throws \SyException\AliPay\AliPayAuthException
      */
     public function setScopes(string $scope)
     {
-        if (in_array($scope, ['auth_user', 'auth_base',], true)) {
+        if (in_array($scope, ['auth_user', 'auth_base'], true)) {
             $this->biz_content['scopes'] = [
                 $scope,
             ];
@@ -55,6 +57,7 @@ class UserLogin extends AliPayBase
 
     /**
      * @param string $state
+     *
      * @throws \SyException\AliPay\AliPayAuthException
      */
     public function setState(string $state)

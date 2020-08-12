@@ -16,61 +16,73 @@ class AuthOrderVoucherCreate extends AliPayBase
 {
     /**
      * 商户授权资金单号
+     *
      * @var string
      */
     private $out_order_no = '';
     /**
      * 商户授权资金操作流水号
+     *
      * @var string
      */
     private $out_request_no = '';
     /**
      * 标题
+     *
      * @var string
      */
     private $order_title = '';
     /**
      * 冻结金额
+     *
      * @var int
      */
     private $amount = 0;
     /**
      * 收款方支付宝账号
+     *
      * @var string
      */
     private $payee_logon_id = '';
     /**
      * 收款方支付宝用户号
+     *
      * @var string
      */
     private $payee_user_id = '';
     /**
      * 最晚付款时间
+     *
      * @var string
      */
     private $pay_timeout = '';
     /**
      * 扩展信息
+     *
      * @var array
      */
     private $extra_param = [];
     /**
      * 销售产品码
+     *
      * @var string
      */
     private $product_code = '';
     /**
      * 标价币种
+     *
      * @var string
      */
     private $trans_currency = '';
     /**
      * 结算币种
+     *
      * @var string
      */
     private $settle_currency = '';
     /**
      * 支付渠道
+     *
      * @var array
      */
     private $enable_pay_channels = [];
@@ -110,6 +122,7 @@ class AuthOrderVoucherCreate extends AliPayBase
 
     /**
      * @param string $outOrderNo
+     *
      * @throws \SyException\AliPay\AliPayFundException
      */
     public function setOutOrderNo(string $outOrderNo)
@@ -123,6 +136,7 @@ class AuthOrderVoucherCreate extends AliPayBase
 
     /**
      * @param string $outRequestNo
+     *
      * @throws \SyException\AliPay\AliPayFundException
      */
     public function setOutRequestNo(string $outRequestNo)
@@ -136,6 +150,7 @@ class AuthOrderVoucherCreate extends AliPayBase
 
     /**
      * @param string $orderTitle
+     *
      * @throws \SyException\AliPay\AliPayFundException
      */
     public function setOrderTitle(string $orderTitle)
@@ -149,11 +164,11 @@ class AuthOrderVoucherCreate extends AliPayBase
 
     /**
      * @param int $amount
+     *
      * @throws \SyException\AliPay\AliPayFundException
      */
     public function setAmount(int $amount)
     {
-
         if ($amount > 0) {
             $this->biz_content['amount'] = number_format(($amount / 100), 2, '.', '');
         } else {
@@ -163,6 +178,7 @@ class AuthOrderVoucherCreate extends AliPayBase
 
     /**
      * @param string $payeeLogonId
+     *
      * @throws \SyException\AliPay\AliPayFundException
      */
     public function setPayeeLogonId(string $payeeLogonId)
@@ -176,6 +192,7 @@ class AuthOrderVoucherCreate extends AliPayBase
 
     /**
      * @param string $payeeUserId
+     *
      * @throws \SyException\AliPay\AliPayFundException
      */
     public function setPayeeUserId(string $payeeUserId)
@@ -189,6 +206,7 @@ class AuthOrderVoucherCreate extends AliPayBase
 
     /**
      * @param string $payTimeout
+     *
      * @throws \SyException\AliPay\AliPayFundException
      */
     public function setPayTimeout(string $payTimeout)
@@ -202,6 +220,7 @@ class AuthOrderVoucherCreate extends AliPayBase
 
     /**
      * @param array $extraParam
+     *
      * @throws \SyException\AliPay\AliPayFundException
      */
     public function setExtraParam(array $extraParam)
@@ -214,6 +233,7 @@ class AuthOrderVoucherCreate extends AliPayBase
 
     /**
      * @param string $transCurrency
+     *
      * @throws \SyException\AliPay\AliPayFundException
      */
     public function setTransCurrency(string $transCurrency)
@@ -227,6 +247,7 @@ class AuthOrderVoucherCreate extends AliPayBase
 
     /**
      * @param string $settleCurrency
+     *
      * @throws \SyException\AliPay\AliPayFundException
      */
     public function setSettleCurrency(string $settleCurrency)
@@ -240,6 +261,7 @@ class AuthOrderVoucherCreate extends AliPayBase
 
     /**
      * @param string $payChannel
+     *
      * @throws \SyException\AliPay\AliPayFundException
      */
     public function addPayChannel(string $payChannel)

@@ -16,56 +16,67 @@ class AuthOrderFreeze extends AliPayBase
 {
     /**
      * 支付授权码
+     *
      * @var string
      */
     private $auth_code = '';
     /**
      * 授权码类型
+     *
      * @var string
      */
     private $auth_code_type = '';
     /**
      * 商户授权资金单号
+     *
      * @var string
      */
     private $out_order_no = '';
     /**
      * 商户授权资金操作流水号
+     *
      * @var string
      */
     private $out_request_no = '';
     /**
      * 标题
+     *
      * @var string
      */
     private $order_title = '';
     /**
      * 冻结金额
+     *
      * @var int
      */
     private $amount = 0;
     /**
      * 收款方支付宝账号
+     *
      * @var string
      */
     private $payee_logon_id = '';
     /**
      * 收款方支付宝用户号
+     *
      * @var string
      */
     private $payee_user_id = '';
     /**
      * 最晚付款时间
+     *
      * @var string
      */
     private $pay_timeout = '';
     /**
      * 扩展信息
+     *
      * @var array
      */
     private $extra_param = [];
     /**
      * 销售产品码
+     *
      * @var string
      */
     private $product_code = '';
@@ -84,6 +95,7 @@ class AuthOrderFreeze extends AliPayBase
 
     /**
      * @param string $authCode
+     *
      * @throws \SyException\AliPay\AliPayFundException
      */
     public function setAuthCode(string $authCode)
@@ -97,6 +109,7 @@ class AuthOrderFreeze extends AliPayBase
 
     /**
      * @param string $outOrderNo
+     *
      * @throws \SyException\AliPay\AliPayFundException
      */
     public function setOutOrderNo(string $outOrderNo)
@@ -110,6 +123,7 @@ class AuthOrderFreeze extends AliPayBase
 
     /**
      * @param string $outRequestNo
+     *
      * @throws \SyException\AliPay\AliPayFundException
      */
     public function setOutRequestNo(string $outRequestNo)
@@ -123,6 +137,7 @@ class AuthOrderFreeze extends AliPayBase
 
     /**
      * @param string $orderTitle
+     *
      * @throws \SyException\AliPay\AliPayFundException
      */
     public function setOrderTitle(string $orderTitle)
@@ -136,11 +151,11 @@ class AuthOrderFreeze extends AliPayBase
 
     /**
      * @param int $amount
+     *
      * @throws \SyException\AliPay\AliPayFundException
      */
     public function setAmount(int $amount)
     {
-
         if ($amount > 0) {
             $this->biz_content['amount'] = number_format(($amount / 100), 2, '.', '');
         } else {
@@ -150,6 +165,7 @@ class AuthOrderFreeze extends AliPayBase
 
     /**
      * @param string $payeeLogonId
+     *
      * @throws \SyException\AliPay\AliPayFundException
      */
     public function setPayeeLogonId(string $payeeLogonId)
@@ -163,6 +179,7 @@ class AuthOrderFreeze extends AliPayBase
 
     /**
      * @param string $payeeUserId
+     *
      * @throws \SyException\AliPay\AliPayFundException
      */
     public function setPayeeUserId(string $payeeUserId)
@@ -176,6 +193,7 @@ class AuthOrderFreeze extends AliPayBase
 
     /**
      * @param string $payTimeout
+     *
      * @throws \SyException\AliPay\AliPayFundException
      */
     public function setPayTimeout(string $payTimeout)
@@ -189,6 +207,7 @@ class AuthOrderFreeze extends AliPayBase
 
     /**
      * @param array $extraParam
+     *
      * @throws \SyException\AliPay\AliPayFundException
      */
     public function setExtraParam(array $extraParam)

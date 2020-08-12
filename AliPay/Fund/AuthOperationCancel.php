@@ -15,26 +15,31 @@ class AuthOperationCancel extends AliPayBase
 {
     /**
      * 支付宝授权资金单号
+     *
      * @var string
      */
     private $auth_no = '';
     /**
      * 商户授权资金单号
+     *
      * @var string
      */
     private $out_order_no = '';
     /**
      * 支付宝授权资金操作流水号
+     *
      * @var string
      */
     private $operation_id = '';
     /**
      * 商户授权资金操作流水号
+     *
      * @var string
      */
     private $out_request_no = '';
     /**
      * 描述
+     *
      * @var string
      */
     private $remark = '';
@@ -51,6 +56,7 @@ class AuthOperationCancel extends AliPayBase
 
     /**
      * @param string $authNo
+     *
      * @throws \SyException\AliPay\AliPayFundException
      */
     public function setAuthNo(string $authNo)
@@ -64,6 +70,7 @@ class AuthOperationCancel extends AliPayBase
 
     /**
      * @param string $outOrderNo
+     *
      * @throws \SyException\AliPay\AliPayFundException
      */
     public function setOutOrderNo(string $outOrderNo)
@@ -77,6 +84,7 @@ class AuthOperationCancel extends AliPayBase
 
     /**
      * @param string $operationId
+     *
      * @throws \SyException\AliPay\AliPayFundException
      */
     public function setOperationId(string $operationId)
@@ -90,6 +98,7 @@ class AuthOperationCancel extends AliPayBase
 
     /**
      * @param string $outRequestNo
+     *
      * @throws \SyException\AliPay\AliPayFundException
      */
     public function setOutRequestNo(string $outRequestNo)
@@ -103,6 +112,7 @@ class AuthOperationCancel extends AliPayBase
 
     /**
      * @param string $remark
+     *
      * @throws \SyException\AliPay\AliPayFundException
      */
     public function setRemark(string $remark)

@@ -15,11 +15,13 @@ class GroupCreate extends AliPayBase
 {
     /**
      * 分组名称
+     *
      * @var string
      */
     private $name = '';
     /**
      * 标签规则
+     *
      * @var array
      */
     private $label_rule = [];
@@ -37,6 +39,7 @@ class GroupCreate extends AliPayBase
 
     /**
      * @param string $name
+     *
      * @throws \SyException\AliPay\AliPayLifeException
      */
     public function setName(string $name)
@@ -51,6 +54,7 @@ class GroupCreate extends AliPayBase
 
     /**
      * @param array $labelRule
+     *
      * @throws \SyException\AliPay\AliPayLifeException
      */
     public function addLabelRule(array $labelRule)

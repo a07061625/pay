@@ -15,16 +15,19 @@ class GroupModify extends AliPayBase
 {
     /**
      * 分组ID
+     *
      * @var string
      */
     private $group_id = '';
     /**
      * 分组名称
+     *
      * @var string
      */
     private $name = '';
     /**
      * 标签规则
+     *
      * @var array
      */
     private $label_rule = [];
@@ -42,6 +45,7 @@ class GroupModify extends AliPayBase
 
     /**
      * @param string $groupId
+     *
      * @throws \SyException\AliPay\AliPayLifeException
      */
     public function setGroupId(string $groupId)
@@ -55,6 +59,7 @@ class GroupModify extends AliPayBase
 
     /**
      * @param string $name
+     *
      * @throws \SyException\AliPay\AliPayLifeException
      */
     public function setName(string $name)
@@ -69,6 +74,7 @@ class GroupModify extends AliPayBase
 
     /**
      * @param array $labelRule
+     *
      * @throws \SyException\AliPay\AliPayLifeException
      */
     public function addLabelRule(array $labelRule)

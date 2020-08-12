@@ -20,36 +20,43 @@ class TransToAccountTransfer extends AliPayBase
 
     /**
      * 商户转账单号
+     *
      * @var string
      */
     private $out_biz_no = '';
     /**
      * 收款方账户类型
+     *
      * @var string
      */
     private $payee_type = '';
     /**
      * 收款方账户
+     *
      * @var string
      */
     private $payee_account = '';
     /**
      * 转账金额,单位为分
+     *
      * @var int
      */
     private $amount = 0;
     /**
      * 付款方姓名
+     *
      * @var string
      */
     private $payer_show_name = '';
     /**
      * 收款方真实姓名
+     *
      * @var string
      */
     private $payee_real_name = '';
     /**
      * 转账备注
+     *
      * @var string
      */
     private $remark = '';
@@ -66,6 +73,7 @@ class TransToAccountTransfer extends AliPayBase
 
     /**
      * @param string $outBizNo
+     *
      * @throws \SyException\AliPay\AliPayFundException
      */
     public function setOutBizNo(string $outBizNo)
@@ -80,6 +88,7 @@ class TransToAccountTransfer extends AliPayBase
     /**
      * @param string $payeeType
      * @param string $payeeAccount
+     *
      * @throws \SyException\AliPay\AliPayFundException
      */
     public function setPayeeTypeAndAccount(string $payeeType, string $payeeAccount)
@@ -96,6 +105,7 @@ class TransToAccountTransfer extends AliPayBase
 
     /**
      * @param int $amount
+     *
      * @throws \SyException\AliPay\AliPayFundException
      */
     public function setAmount(int $amount)

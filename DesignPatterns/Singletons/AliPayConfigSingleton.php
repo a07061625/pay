@@ -21,11 +21,13 @@ class AliPayConfigSingleton
 
     /**
      * 支付配置列表
+     *
      * @var array
      */
     private $payConfigs = [];
     /**
      * 支付配置清理时间戳
+     *
      * @var int
      */
     private $payClearTime = 0;
@@ -48,6 +50,7 @@ class AliPayConfigSingleton
 
     /**
      * 获取所有的支付配置
+     *
      * @return array
      */
     public function getPayConfigs()
@@ -57,8 +60,11 @@ class AliPayConfigSingleton
 
     /**
      * 获取支付配置
+     *
      * @param string $appId
+     *
      * @return \AliPay\PayConfig
+     *
      * @throws \SyException\AliPay\AliPayPayException
      */
     public function getPayConfig(string $appId)
@@ -73,13 +79,14 @@ class AliPayConfigSingleton
 
         if ($payConfig->isValid()) {
             return $payConfig;
-        } else {
-            throw new AliPayPayException('支付配置不存在', ErrorCode::ALIPAY_PARAM_ERROR);
         }
+
+        throw new AliPayPayException('支付配置不存在', ErrorCode::ALIPAY_PARAM_ERROR);
     }
 
     /**
      * 移除支付配置
+     *
      * @param string $appId
      */
     public function removePayConfig(string $appId)
@@ -89,7 +96,9 @@ class AliPayConfigSingleton
 
     /**
      * 获取本地支付配置
+     *
      * @param string $appId
+     *
      * @return \AliPay\PayConfig|null
      */
     private function getLocalPayConfig(string $appId)

@@ -15,6 +15,7 @@ class PersonalMenuDelete extends AliPayBase
 {
     /**
      * 菜单key
+     *
      * @var string
      */
     private $menu_key = '';
@@ -31,6 +32,7 @@ class PersonalMenuDelete extends AliPayBase
 
     /**
      * @param string $menuKey
+     *
      * @throws \SyException\AliPay\AliPayLifeException
      */
     public function setMenuKey(string $menuKey)

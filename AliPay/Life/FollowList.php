@@ -15,6 +15,7 @@ class FollowList extends AliPayBase
 {
     /**
      * 分组用户ID
+     *
      * @var string
      */
     private $next_user_id = '';
@@ -31,6 +32,7 @@ class FollowList extends AliPayBase
 
     /**
      * @param string $nextUserId
+     *
      * @throws \SyException\AliPay\AliPayLifeException
      */
     public function setNextUserId(string $nextUserId)

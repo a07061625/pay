@@ -16,26 +16,31 @@ class AuthOrderUnfreeze extends AliPayBase
 {
     /**
      * 支付宝授权资金单号
+     *
      * @var string
      */
     private $auth_no = '';
     /**
      * 商户授权资金操作流水号
+     *
      * @var string
      */
     private $out_request_no = '';
     /**
      * 解冻金额
+     *
      * @var int
      */
     private $amount = 0;
     /**
      * 描述
+     *
      * @var string
      */
     private $remark = '';
     /**
      * 扩展信息
+     *
      * @var array
      */
     private $extra_param = [];
@@ -52,6 +57,7 @@ class AuthOrderUnfreeze extends AliPayBase
 
     /**
      * @param string $authNo
+     *
      * @throws \SyException\AliPay\AliPayFundException
      */
     public function setAuthNo(string $authNo)
@@ -65,6 +71,7 @@ class AuthOrderUnfreeze extends AliPayBase
 
     /**
      * @param string $outRequestNo
+     *
      * @throws \SyException\AliPay\AliPayFundException
      */
     public function setOutRequestNo(string $outRequestNo)
@@ -78,11 +85,11 @@ class AuthOrderUnfreeze extends AliPayBase
 
     /**
      * @param int $amount
+     *
      * @throws \SyException\AliPay\AliPayFundException
      */
     public function setAmount(int $amount)
     {
-
         if ($amount > 0) {
             $this->biz_content['amount'] = number_format(($amount / 100), 2, '.', '');
         } else {
@@ -92,6 +99,7 @@ class AuthOrderUnfreeze extends AliPayBase
 
     /**
      * @param string $remark
+     *
      * @throws \SyException\AliPay\AliPayFundException
      */
     public function setRemark(string $remark)
@@ -105,6 +113,7 @@ class AuthOrderUnfreeze extends AliPayBase
 
     /**
      * @param array $extraParam
+     *
      * @throws \SyException\AliPay\AliPayFundException
      */
     public function setExtraParam(array $extraParam)

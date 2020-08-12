@@ -15,11 +15,13 @@ class TransOrderQuery extends AliPayBase
 {
     /**
      * 商户转账单号
+     *
      * @var string
      */
     private $out_biz_no = '';
     /**
      * 支付宝转账单号
+     *
      * @var string
      */
     private $order_id = '';
@@ -36,6 +38,7 @@ class TransOrderQuery extends AliPayBase
 
     /**
      * @param string $outBizNo
+     *
      * @throws \SyException\AliPay\AliPayFundException
      */
     public function setOutBizNo(string $outBizNo)
@@ -49,6 +52,7 @@ class TransOrderQuery extends AliPayBase
 
     /**
      * @param string $orderId
+     *
      * @throws \SyException\AliPay\AliPayFundException
      */
     public function setOrderId(string $orderId)

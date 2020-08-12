@@ -8,19 +8,21 @@
 namespace AliPay\Pay;
 
 use AliPay\AliPayBase;
-use SyConstant\ErrorCode;
 use DesignPatterns\Singletons\AliPayConfigSingleton;
+use SyConstant\ErrorCode;
 use SyException\AliPay\AliPayPayException;
 
 class TradeClose extends AliPayBase
 {
     /**
      * 商户订单号
+     *
      * @var string
      */
     private $out_trade_no = '';
     /**
      * 支付宝交易号
+     *
      * @var string
      */
     private $trade_no = '';
@@ -38,6 +40,7 @@ class TradeClose extends AliPayBase
 
     /**
      * @param string $outTradeNo
+     *
      * @throws \SyException\AliPay\AliPayPayException
      */
     public function setOutTradeNo(string $outTradeNo)
@@ -51,6 +54,7 @@ class TradeClose extends AliPayBase
 
     /**
      * @param string $tradeNo
+     *
      * @throws \SyException\AliPay\AliPayPayException
      */
     public function setTradeNo(string $tradeNo)

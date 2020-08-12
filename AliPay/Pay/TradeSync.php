@@ -16,21 +16,25 @@ class TradeSync extends AliPayBase
 {
     /**
      * 支付宝交易号
+     *
      * @var string
      */
     private $trade_no = '';
     /**
      * 商户订单号
+     *
      * @var string
      */
     private $out_request_no = '';
     /**
      * 业务类型
+     *
      * @var string
      */
     private $biz_type = '';
     /**
      * 同步信息
+     *
      * @var array
      */
     private $order_biz_info = [];
@@ -47,6 +51,7 @@ class TradeSync extends AliPayBase
 
     /**
      * @param string $tradeNo
+     *
      * @throws \SyException\AliPay\AliPayPayException
      */
     public function setTradeNo(string $tradeNo)
@@ -60,6 +65,7 @@ class TradeSync extends AliPayBase
 
     /**
      * @param string $outRequestNo
+     *
      * @throws \SyException\AliPay\AliPayPayException
      */
     public function setOutRequestNo(string $outRequestNo)
@@ -73,6 +79,7 @@ class TradeSync extends AliPayBase
 
     /**
      * @param string $bizType
+     *
      * @throws \SyException\AliPay\AliPayPayException
      */
     public function setBizType(string $bizType)
@@ -86,15 +93,15 @@ class TradeSync extends AliPayBase
 
     /**
      * @param array $orderBizInfo
+     *
      * @throws \SyException\AliPay\AliPayPayException
      */
     public function setOrderBizInfo(array $orderBizInfo)
     {
         if (empty($orderBizInfo)) {
             throw new AliPayPayException('同步信息不合法', ErrorCode::ALIPAY_PAY_PARAM_ERROR);
-        } else {
-            $this->biz_content['order_biz_info'] = Tool::jsonEncode($orderBizInfo, JSON_UNESCAPED_UNICODE);
         }
+        $this->biz_content['order_biz_info'] = Tool::jsonEncode($orderBizInfo, JSON_UNESCAPED_UNICODE);
     }
 
     public function getDetail() : array

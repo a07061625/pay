@@ -15,21 +15,25 @@ class TradeSettle extends AliPayBase
 {
     /**
      * 结算请求流水号
+     *
      * @var string
      */
     private $out_request_no = '';
     /**
      * 订单号
+     *
      * @var string
      */
     private $trade_no = '';
     /**
      * 分账明细信息
+     *
      * @var array
      */
     private $royalty_parameters = [];
     /**
      * 操作员id
+     *
      * @var string
      */
     private $operator_id = '';
@@ -46,6 +50,7 @@ class TradeSettle extends AliPayBase
 
     /**
      * @param string $outRequestNo
+     *
      * @throws \SyException\AliPay\AliPayPayException
      */
     public function setOutRequestNo(string $outRequestNo)
@@ -59,6 +64,7 @@ class TradeSettle extends AliPayBase
 
     /**
      * @param string $tradeNo
+     *
      * @throws \SyException\AliPay\AliPayPayException
      */
     public function setTradeNo(string $tradeNo)
@@ -72,6 +78,7 @@ class TradeSettle extends AliPayBase
 
     /**
      * @param array $royaltyParameters
+     *
      * @throws \SyException\AliPay\AliPayPayException
      */
     public function setRoyaltyParameters(array $royaltyParameters)

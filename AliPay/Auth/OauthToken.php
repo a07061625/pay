@@ -15,16 +15,19 @@ class OauthToken extends AliPayBase
 {
     /**
      * 准许类型
+     *
      * @var string
      */
     private $grant_type = '';
     /**
      * 授权码
+     *
      * @var string
      */
     private $code = '';
     /**
      * 刷新令牌
+     *
      * @var string
      */
     private $refresh_token = '';
@@ -41,11 +44,12 @@ class OauthToken extends AliPayBase
 
     /**
      * @param string $grantType
+     *
      * @throws \SyException\AliPay\AliPayAuthException
      */
     public function setGrantType(string $grantType)
     {
-        if (in_array($grantType, ['authorization_code', 'refresh_token',], true)) {
+        if (in_array($grantType, ['authorization_code', 'refresh_token'], true)) {
             $this->biz_content['grant_type'] = $grantType;
         } else {
             throw new AliPayAuthException('准许类型不合法', ErrorCode::ALIPAY_AUTH_PARAM_ERROR);
@@ -54,6 +58,7 @@ class OauthToken extends AliPayBase
 
     /**
      * @param string $code
+     *
      * @throws \SyException\AliPay\AliPayAuthException
      */
     public function setCode(string $code)
@@ -68,6 +73,7 @@ class OauthToken extends AliPayBase
 
     /**
      * @param string $refreshToken
+     *
      * @throws \SyException\AliPay\AliPayAuthException
      */
     public function setRefreshToken(string $refreshToken)

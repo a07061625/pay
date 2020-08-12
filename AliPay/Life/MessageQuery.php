@@ -15,6 +15,7 @@ class MessageQuery extends AliPayBase
 {
     /**
      * 消息id列表
+     *
      * @var array
      */
     private $message_ids = [];
@@ -31,6 +32,7 @@ class MessageQuery extends AliPayBase
 
     /**
      * @param string $messageId
+     *
      * @throws \SyException\AliPay\AliPayLifeException
      */
     public function addMessageId(string $messageId)

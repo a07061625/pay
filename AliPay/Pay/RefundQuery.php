@@ -15,16 +15,19 @@ class RefundQuery extends AliPayBase
 {
     /**
      * 商户订单号
+     *
      * @var string
      */
     private $out_trade_no = '';
     /**
      * 支付宝交易号
+     *
      * @var string
      */
     private $trade_no = '';
     /**
      * 退款单号
+     *
      * @var string
      */
     private $out_request_no = '';
@@ -41,6 +44,7 @@ class RefundQuery extends AliPayBase
 
     /**
      * @param string $outTradeNo
+     *
      * @throws \SyException\AliPay\AliPayPayException
      */
     public function setOutTradeNo(string $outTradeNo)
@@ -54,6 +58,7 @@ class RefundQuery extends AliPayBase
 
     /**
      * @param string $tradeNo
+     *
      * @throws \SyException\AliPay\AliPayPayException
      */
     public function setTradeNo(string $tradeNo)
@@ -67,6 +72,7 @@ class RefundQuery extends AliPayBase
 
     /**
      * @param string $refundNo
+     *
      * @throws \SyException\AliPay\AliPayPayException
      */
     public function setRefundNo(string $refundNo)

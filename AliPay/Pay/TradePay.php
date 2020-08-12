@@ -8,8 +8,8 @@
 namespace AliPay\Pay;
 
 use AliPay\AliPayBase;
-use SyConstant\ErrorCode;
 use DesignPatterns\Singletons\AliPayConfigSingleton;
+use SyConstant\ErrorCode;
 use SyException\AliPay\AliPayPayException;
 use SyTool\Tool;
 
@@ -26,101 +26,121 @@ class TradePay extends AliPayBase
 
     /**
      * 商户订单号
+     *
      * @var string
      */
     private $out_trade_no = '';
     /**
      * 支付场景
+     *
      * @var string
      */
     private $scene = '';
     /**
      * 支付授权码
+     *
      * @var string
      */
     private $auth_code = '';
     /**
      * 销售产品码
+     *
      * @var string
      */
     private $product_code = '';
     /**
      * 订单标题
+     *
      * @var string
      */
     private $subject = '';
     /**
      * 买家支付宝用户ID
+     *
      * @var string
      */
     private $buyer_id = '';
     /**
      * 卖家支付宝用户ID
+     *
      * @var string
      */
     private $seller_id = '';
     /**
      * 标价币种
+     *
      * @var string
      */
     private $trans_currency = '';
     /**
      * 结算币种
+     *
      * @var string
      */
     private $settle_currency = '';
     /**
      * 订单总金额,单位为分
+     *
      * @var int
      */
     private $total_amount = 0;
     /**
      * 可打折金额金额,单位为分
+     *
      * @var int
      */
     private $discountable_amount = 0;
     /**
      * 订单描述
+     *
      * @var string
      */
     private $body = '';
     /**
      * 商品信息
+     *
      * @var array
      */
     private $goods_detail = [];
     /**
      * 操作员编号
+     *
      * @var string
      */
     private $operator_id = '';
     /**
      * 门店编号
+     *
      * @var string
      */
     private $store_id = '';
     /**
      * 终端编号
+     *
      * @var string
      */
     private $terminal_id = '';
     /**
      * 业务扩展参数
+     *
      * @var array
      */
     private $extend_params = [];
     /**
      * 允许的最晚付款时间
+     *
      * @var string
      */
     private $timeout_express = '';
     /**
      * 预授权确认模式
+     *
      * @var string
      */
     private $auth_confirm_mode = '';
     /**
      * 终端设备相关信息
+     *
      * @var array
      */
     private $terminal_params = [];
@@ -143,6 +163,7 @@ class TradePay extends AliPayBase
 
     /**
      * @param string $outTradeNo
+     *
      * @throws \SyException\AliPay\AliPayPayException
      */
     public function setOutTradeNo(string $outTradeNo)
@@ -156,6 +177,7 @@ class TradePay extends AliPayBase
 
     /**
      * @param string $scene
+     *
      * @throws \SyException\AliPay\AliPayPayException
      */
     public function setScene(string $scene)
@@ -169,6 +191,7 @@ class TradePay extends AliPayBase
 
     /**
      * @param string $authCode
+     *
      * @throws \SyException\AliPay\AliPayPayException
      */
     public function setAuthCode(string $authCode)
@@ -182,6 +205,7 @@ class TradePay extends AliPayBase
 
     /**
      * @param string $productCode
+     *
      * @throws \SyException\AliPay\AliPayPayException
      */
     public function setProductCode(string $productCode)
@@ -195,6 +219,7 @@ class TradePay extends AliPayBase
 
     /**
      * @param string $subject
+     *
      * @throws \SyException\AliPay\AliPayPayException
      */
     public function setSubject(string $subject)
@@ -209,6 +234,7 @@ class TradePay extends AliPayBase
 
     /**
      * @param string $buyerId
+     *
      * @throws \SyException\AliPay\AliPayPayException
      */
     public function setBuyerId(string $buyerId)
@@ -222,6 +248,7 @@ class TradePay extends AliPayBase
 
     /**
      * @param string $transCurrency
+     *
      * @throws \SyException\AliPay\AliPayPayException
      */
     public function setTransCurrency(string $transCurrency)
@@ -235,6 +262,7 @@ class TradePay extends AliPayBase
 
     /**
      * @param string $settleCurrency
+     *
      * @throws \SyException\AliPay\AliPayPayException
      */
     public function setSettleCurrency(string $settleCurrency)
@@ -248,6 +276,7 @@ class TradePay extends AliPayBase
 
     /**
      * @param int $totalAmount
+     *
      * @throws \SyException\AliPay\AliPayPayException
      */
     public function setTotalAmount(int $totalAmount)
@@ -262,6 +291,7 @@ class TradePay extends AliPayBase
 
     /**
      * @param int $discountableAmount
+     *
      * @throws \SyException\AliPay\AliPayPayException
      */
     public function setDiscountableAmount(int $discountableAmount)
@@ -338,6 +368,7 @@ class TradePay extends AliPayBase
 
     /**
      * @param string $authConfirmMode
+     *
      * @throws \SyException\AliPay\AliPayPayException
      */
     public function setAuthConfirmMode(string $authConfirmMode)
