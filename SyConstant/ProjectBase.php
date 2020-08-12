@@ -47,10 +47,16 @@ class ProjectBase
     const WX_CONFIG_CORP_STATUS_ENABLE = 1; //企业微信状态-有效
     const WX_CONFIG_DEFAULT_CLIENT_IP = '127.0.0.1'; //默认客户端IP
 
+    //支付宝支付常量
+    const ALI_PAY_STATUS_DISABLE = 0; //状态-无效
+    const ALI_PAY_STATUS_ENABLE = 1; //状态-有效
+
     //时间常量
     const TIME_EXPIRE_LOCAL_WXACCOUNT_REFRESH = 600; //超时时间-本地微信账号更新,单位为秒
     const TIME_EXPIRE_LOCAL_WXACCOUNT_CLEAR = 3600; //超时时间-本地微信账号清理,单位为秒
     const TIME_EXPIRE_LOCAL_WXCORP_REFRESH = 600; //超时时间-本地企业微信更新,单位为秒
     const TIME_EXPIRE_LOCAL_WXCORP_CLEAR = 3600; //超时时间-本地企业微信清理,单位为秒
     const TIME_EXPIRE_LOCAL_WXCACHE_CLEAR = 300; //超时时间-本地微信缓存清理,单位为秒
+    const TIME_EXPIRE_LOCAL_ALIPAY_REFRESH = 600; //超时时间-本地支付宝支付更新,单位为秒
+    const TIME_EXPIRE_LOCAL_ALIPAY_CLEAR = 3600; //超时时间-本地支付宝支付清理,单位为秒
 }
