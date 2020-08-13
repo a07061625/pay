@@ -10,9 +10,12 @@ namespace AliPay;
 use SyConstant\ErrorCode;
 use SyException\AliPay\AliPayPayException;
 use SyTool\Tool;
+use SyTrait\SimpleConfigTrait;
 
 class PayConfig
 {
+    use SimpleConfigTrait;
+
     /**
      * AppId
      *
@@ -75,20 +78,6 @@ class PayConfig
      * @var string
      */
     private $pubAliKeyFull = '';
-
-    /**
-     * 配置有效状态
-     *
-     * @var bool
-     */
-    private $valid = false;
-
-    /**
-     * 配置过期时间戳
-     *
-     * @var int
-     */
-    private $expireTime = 0;
 
     public function __construct()
     {
@@ -273,38 +262,6 @@ class PayConfig
     public function getPubAliKeyFull() : string
     {
         return $this->pubAliKeyFull;
-    }
-
-    /**
-     * @return bool
-     */
-    public function isValid() : bool
-    {
-        return $this->valid;
-    }
-
-    /**
-     * @param bool $valid
-     */
-    public function setValid(bool $valid)
-    {
-        $this->valid = $valid;
-    }
-
-    /**
-     * @return int
-     */
-    public function getExpireTime() : int
-    {
-        return $this->expireTime;
-    }
-
-    /**
-     * @param int $expireTime
-     */
-    public function setExpireTime(int $expireTime)
-    {
-        $this->expireTime = $expireTime;
     }
 
     /**
