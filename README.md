@@ -67,7 +67,7 @@
 
 ### 支付宝
 #### 说明
-- 已完成的宝接口,请看AliPay\README.md文件
+- 已完成的接口,请看AliPay\README.md文件
 #### 使用样例
     $pay = new \AliPay\Pay\PayWap('111111');
     $pay->setSubject('红富士苹果');
@@ -77,7 +77,7 @@
 
 ### 银联支付
 #### 说明
-- 已完成的宝接口,请看SyPay\Union\README.md文件
+- 已完成的接口,请看SyPay\Union\README.md文件
 #### 使用样例
     $obj = new \SyPay\Union\Channels\Wap\Consume('111111', \SyPay\BaseUnion::ENV_TYPE_PRODUCT);
     $obj->setOrderId('123456');;
