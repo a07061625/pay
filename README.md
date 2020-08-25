@@ -33,11 +33,11 @@
 ### 微信
 #### 第三方开放平台
 修改DesignPatterns\Singletons\WxConfigSingleton.php的getOpenCommonConfig方法,自己设置相关配置
-#### 企业微信服务商
+#### 企业号服务商
 修改DesignPatterns\Singletons\WxConfigSingleton.php的getCorpProviderConfig方法,自己设置相关配置
 #### 公众号,小程序
 修改SyTrait\WxConfigTrait.php的refreshAccountConfig方法,参考现有的代码替换掉
-#### 企业微信
+#### 企业号
 修改SyTrait\WxConfigTrait.php的refreshCorpConfig方法,参考现有的代码替换掉
 
 ### 支付宝
