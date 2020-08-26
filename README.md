@@ -2,6 +2,7 @@
 - 微信服务端接口集成,支持公众号,小程序,企业微信,第三方开放平台
 - 支付宝接口集成,支持商户号
 - 银联支付接口集成,目前支持全渠道
+- 贝宝支付
 
 # 环境
 ## 必要
@@ -48,9 +49,12 @@
 #### 全渠道
 修改SyTrait\PayConfigTrait.php的refreshUnionChannelsConfig方法,参考现有的代码替换掉
 
+### 贝宝支付
+修改SyTrait\PayConfigTrait.php的refreshPayPalConfig方法,参考现有的代码替换掉
+
 # 使用
 ## ***要求(必须完成)***
-- 根据需要修改autoload.php并保证该文件被初始化,建议该步骤放到框架的初始化流程(bootstrap)里面
+- 在框架运行流程的初始化阶段(bootstrap),初始化autoload.php和defines.php,这两个文件的内容可根据需要自行调整
 - 日志组件如需替换成其他方式,请参考现有SyLog\Log.php文件自行替换,最好不要改函数名和参数,改内部实现即可
 - 如需修改redis缓存,请参考DesignPatterns\Singletons\RedisSingleton.php的init方法实现自行修改
 
@@ -84,6 +88,39 @@
     //其他相关设置请参考类的实现
     $res = \SyPay\UtilUnionChannels::sendServerRequest($obj);
     var_dump($res);
+
+### 贝宝支付
+#### 使用样例
+    $clientId = '111111';
+    $config = \DesignPatterns\Singletons\PayConfigSingleton::getInstance()->getPayPalConfig($clientId);
+    $client = \DesignPatterns\Singletons\PayConfigSingleton::getInstance()->getPayPalClient($clientId);
+    $request = new \SyPay\PayPal\Orders\OrdersCreateRequest();
+    $request->prefer('return=representation');
+    $request->body = [
+        "intent" => "CAPTURE",
+        "purchase_units" => [[
+            "reference_id" => "test_ref_id1",
+            "amount" => [
+                "value" => "100.00",
+                "currency_code" => "USD"
+            ]
+        ]],
+        "application_context" => [
+            "cancel_url" => $config->getCancelUrl(),
+            "return_url" => $config->getReturnUrl()
+        ]
+    ];
+    
+    try {
+        // Call API with your client and get a response for your call
+        $response = $client->execute($request);
+    
+        // If call returns body in response, you can get the deserialized version from the result attribute of the response
+        print_r($response);
+    } catch (\SyPay\PayPal\Http\HttpException $ex) {
+        echo $ex->statusCode;
+        print_r($ex->getMessage());
+    }
 
 # 备注
 - 如有疑问,请联系QQ: 837483732
