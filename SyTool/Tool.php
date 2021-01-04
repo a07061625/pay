@@ -46,10 +46,12 @@ class Tool
 
     /**
      * 获取数组值
-     * @param array $array 数组
-     * @param string|int $key 键值
-     * @param object $default 默认值
-     * @param bool $isRecursion 是否递归查找,false:不递归 true:递归
+     *
+     * @param array      $array       数组
+     * @param string|int $key         键值
+     * @param object     $default     默认值
+     * @param bool       $isRecursion 是否递归查找,false:不递归 true:递归
+     *
      * @return mixed
      */
     public static function getArrayVal(array $array, $key, $default = null, bool $isRecursion = false)
@@ -74,9 +76,11 @@ class Tool
 
     /**
      * 获取配置信息
-     * @param string $tag 配置标识
-     * @param string $field 字段名称
-     * @param mixed $default 默认值
+     *
+     * @param string $tag     配置标识
+     * @param string $field   字段名称
+     * @param mixed  $default 默认值
+     *
      * @return mixed
      */
     public static function getConfig(string $tag, string $field = '', $default = null)
@@ -86,16 +90,19 @@ class Tool
             return $default;
         } elseif (is_array($configs) && (strlen($field) > 0)) {
             return self::getArrayVal($configs, $field, $default);
-        } else {
-            return $configs;
         }
+
+        return $configs;
     }
 
     /**
      * array转xml
+     *
      * @param array $dataArr
-     * @param int $transferType 转换类型
+     * @param int   $transferType 转换类型
+     *
      * @return string
+     *
      * @throws \SyException\Common\CheckException
      */
     public static function arrayToXml(array $dataArr, int $transferType = 1) : string
@@ -130,8 +137,11 @@ class Tool
 
     /**
      * xml转为array
+     *
      * @param string $xml
+     *
      * @return array
+     *
      * @throws \SyException\Common\CheckException
      */
     public static function xmlToArray(string $xml)
@@ -148,8 +158,10 @@ class Tool
 
     /**
      * RSA签名
-     * @param string $data 待签名数据
+     *
+     * @param string $data          待签名数据
      * @param string $priKeyContent 私钥文件内容
+     *
      * @return string 签名结果
      */
     public static function rsaSign(string $data, string $priKeyContent) : string
@@ -163,9 +175,11 @@ class Tool
 
     /**
      * RSA验签
-     * @param string $data 待签名数据
+     *
+     * @param string $data          待签名数据
      * @param string $pubKeyContent 公钥文件内容
-     * @param string $sign 要校对的的签名结果
+     * @param string $sign          要校对的的签名结果
+     *
      * @return boolean 验证结果
      */
     public static function rsaVerify(string $data, string $pubKeyContent, string $sign) : bool
@@ -179,9 +193,11 @@ class Tool
 
     /**
      * RSA加密
-     * @param string $data 待加密数据
+     *
+     * @param string $data       待加密数据
      * @param string $keyContent 密钥文件内容,根据模式不同设置公钥或私钥
-     * @param int $mode 模式 0:公钥加密 1:私钥加密
+     * @param int    $mode       模式 0:公钥加密 1:私钥加密
+     *
      * @return string
      */
     public static function rsaEncrypt(string $data, string $keyContent, int $mode = 0)
@@ -210,9 +226,11 @@ class Tool
 
     /**
      * RSA解密
-     * @param string $data 待解密数据
+     *
+     * @param string $data       待解密数据
      * @param string $keyContent 密钥文件内容,根据模式不同设置公钥或私钥
-     * @param int $mode 模式 0:私钥解密 1:公钥解密
+     * @param int    $mode       模式 0:私钥解密 1:公钥解密
+     *
      * @return string
      */
     public static function rsaDecrypt(string $data, string $keyContent, int $mode = 0)
@@ -222,7 +240,7 @@ class Tool
         $length = strlen($encryptData) / 128;
         if ($mode == 0) { //私钥解密
             $key = openssl_get_privatekey($keyContent);
-            for ($i = 0; $i < $length; $i ++) {
+            for ($i = 0; $i < $length; $i++) {
                 $eDecrypt = '';
                 $eEncrypt = substr($encryptData, $i * 128, 128);
                 openssl_private_decrypt($eEncrypt, $eDecrypt, $key);
@@ -230,7 +248,7 @@ class Tool
             }
         } else { //公钥解密
             $key = openssl_get_publickey($keyContent);
-            for ($i = 0; $i < $length; $i ++) {
+            for ($i = 0; $i < $length; $i++) {
                 $eDecrypt = '';
                 $eEncrypt = substr($encryptData, $i * 128, 128);
                 openssl_public_decrypt($eEncrypt, $eDecrypt, $key);
@@ -244,8 +262,10 @@ class Tool
 
     /**
      * 把数组转移成json字符串
+     *
      * @param array|object $arr
-     * @param int|string $options
+     * @param int|string   $options
+     *
      * @return bool|string
      */
     public static function jsonEncode($arr, $options = JSON_OBJECT_AS_ARRAY)
@@ -259,8 +279,10 @@ class Tool
 
     /**
      * 解析json
-     * @param string $json
+     *
+     * @param string     $json
      * @param int|string $assoc
+     *
      * @return bool|mixed
      */
     public static function jsonDecode($json, $assoc = JSON_OBJECT_AS_ARRAY)
@@ -274,11 +296,13 @@ class Tool
 
     /**
      * 生成随机字符串
-     * @param int $length 需要获取的随机字符串长度
+     *
+     * @param int    $length   需要获取的随机字符串长度
      * @param string $dataType 数据类型<br/>
-     *   total: 数字,大小写字母<br/>
-     *   lower: 小写字母<br/>
-     *   numlower: 数字,小写字母<br/>
+     *                         total: 数字,大小写字母<br/>
+     *                         lower: 小写字母<br/>
+     *                         numlower: 数字,小写字母<br/>
+     *
      * @return string
      */
     public static function createNonceStr(int $length, string $dataType = 'total') : string
@@ -286,17 +310,19 @@ class Tool
         $resStr = '';
         switch ($dataType) {
             case 'lower':
-                for ($i = 0; $i < $length; $i ++) {
+                for ($i = 0; $i < $length; $i++) {
                     $resStr .= self::$lowerChars[random_int(0, 23)];
                 }
+
                 break;
             case 'numlower':
-                for ($i = 0; $i < $length; $i ++) {
+                for ($i = 0; $i < $length; $i++) {
                     $resStr .= self::$numLowerChars[random_int(0, 31)];
                 }
+
                 break;
             default:
-                for ($i = 0; $i < $length; $i ++) {
+                for ($i = 0; $i < $length; $i++) {
                     $resStr .= self::$totalChars[random_int(0, 56)];
                 }
         }
@@ -306,9 +332,12 @@ class Tool
 
     /**
      * 发送curl请求
-     * @param array $configs 配置数组
-     * @param int $rspHeaderType 响应头类型
+     *
+     * @param array $configs       配置数组
+     * @param int   $rspHeaderType 响应头类型
+     *
      * @return array
+     *
      * @throws \SyException\Common\CheckException
      */
     public static function sendCurlReq(array $configs, int $rspHeaderType = self::CURL_RSP_HEAD_TYPE_EMPTY)
@@ -372,6 +401,7 @@ class Tool
 
     /**
      * 获取当前时间戳
+     *
      * @return int
      */
     public static function getNowTime()
@@ -381,7 +411,9 @@ class Tool
 
     /**
      * 填充补位需要加密的明文
+     *
      * @param string $text 需要加密的明文
+     *
      * @return string
      */
     public static function pkcs7Encode(string $text) : string
@@ -397,7 +429,7 @@ class Tool
         //获得补位所用的字符
         $needChr = chr($addLength);
         $tmp = '';
-        for ($i = 0; $i < $addLength; $i ++) {
+        for ($i = 0; $i < $addLength; $i++) {
             $tmp .= $needChr;
         }
 
@@ -406,12 +438,14 @@ class Tool
 
     /**
      * 补位删除解密后的明文
+     *
      * @param string $text 解密后的明文
+     *
      * @return string
      */
     public static function pkcs7Decode(string $text) : string
     {
-        $pad = ord(substr($text, - 1));
+        $pad = ord(substr($text, -1));
         if (($pad < 1) || ($pad > 32)) {
             $pad = 0;
         }
