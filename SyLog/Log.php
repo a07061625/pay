@@ -24,15 +24,19 @@ final class Log
         switch ($level) {
             case SEASLOG_DEBUG:
                 \SeasLog::debug($log);
+
                 break;
             case SEASLOG_WARNING:
                 \SeasLog::warning($log);
+
                 break;
             case SEASLOG_ERROR:
                 \SeasLog::error($log);
+
                 break;
             default:
                 \SeasLog::info($log);
+
                 break;
         }
     }
@@ -54,9 +58,10 @@ final class Log
 
     /**
      * 打印错误日志
-     * @param string $msg 日志主要内容
-     * @param int|string $code 错误码
-     * @param string $trace 异常堆栈信息
+     *
+     * @param string     $msg   日志主要内容
+     * @param int|string $code  错误码
+     * @param string     $trace 异常堆栈信息
      */
     public static function error(string $msg, $code = 0, string $trace = '')
     {
