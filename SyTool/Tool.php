@@ -279,8 +279,10 @@ class Tool
 
     /**
      * 解析json
-     * @param string $json
+     *
+     * @param string     $json
      * @param int|string $assoc
+     *
      * @return mixed
      */
     public static function jsonDecode(string $json, $assoc = JSON_OBJECT_AS_ARRAY)
