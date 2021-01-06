@@ -200,7 +200,7 @@ class Tool
      *
      * @return string
      */
-    public static function rsaEncrypt(string $data, string $keyContent, int $mode = 0)
+    public static function rsaEncrypt(string $data, string $keyContent, int $mode = 0) : string
     {
         $dataArr = str_split($data, 117);
         $encryptArr = [];
@@ -233,7 +233,7 @@ class Tool
      *
      * @return string
      */
-    public static function rsaDecrypt(string $data, string $keyContent, int $mode = 0)
+    public static function rsaDecrypt(string $data, string $keyContent, int $mode = 0) : string
     {
         $decryptStr = '';
         $encryptData = base64_decode($data, true);
@@ -279,19 +279,13 @@ class Tool
 
     /**
      * 解析json
-     *
-     * @param string     $json
+     * @param string $json
      * @param int|string $assoc
-     *
-     * @return bool|mixed
+     * @return mixed
      */
-    public static function jsonDecode($json, $assoc = JSON_OBJECT_AS_ARRAY)
+    public static function jsonDecode(string $json, $assoc = JSON_OBJECT_AS_ARRAY)
     {
-        if (is_string($json)) {
-            return json_decode($json, $assoc);
-        }
-
-        return false;
+        return json_decode($json, $assoc);
     }
 
     /**
@@ -404,7 +398,7 @@ class Tool
      *
      * @return int
      */
-    public static function getNowTime()
+    public static function getNowTime() : int
     {
         return $_SERVER[SyInner::SERVER_DATA_KEY_TIMESTAMP] ?? time();
     }
