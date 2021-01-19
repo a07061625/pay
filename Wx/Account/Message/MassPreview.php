@@ -19,21 +19,25 @@ class MassPreview extends WxBaseAccount
 {
     /**
      * 公众号ID
+     *
      * @var string
      */
     private $appid = '';
     /**
      * 消息类型
+     *
      * @var string
      */
     private $msgtype = '';
     /**
      * 用户openid
+     *
      * @var string
      */
     private $touser = '';
     /**
      * 公众号名称
+     *
      * @var string
      */
     private $towxname = '';
@@ -51,7 +55,8 @@ class MassPreview extends WxBaseAccount
 
     /**
      * @param string $type
-     * @param array $data
+     * @param array  $data
+     *
      * @throws \SyException\Wx\WxException
      */
     public function setMsgData(string $type, array $data)
@@ -72,6 +77,7 @@ class MassPreview extends WxBaseAccount
 
     /**
      * @param string $openid
+     *
      * @throws \SyException\Wx\WxException
      */
     public function setOpenid(string $openid)
@@ -85,6 +91,7 @@ class MassPreview extends WxBaseAccount
 
     /**
      * @param string $wxName
+     *
      * @throws \SyException\Wx\WxException
      */
     public function setWxName(string $wxName)

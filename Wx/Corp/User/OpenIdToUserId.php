@@ -17,6 +17,7 @@ use Wx\WxUtilBase;
 
 /**
  * openid转user id
+ *
  * @package Wx\Corp\User
  */
 class OpenIdToUserId extends WxBaseCorp
@@ -25,6 +26,7 @@ class OpenIdToUserId extends WxBaseCorp
 
     /**
      * 用户openid
+     *
      * @var string
      */
     private $openid = '';
@@ -43,6 +45,7 @@ class OpenIdToUserId extends WxBaseCorp
 
     /**
      * @param string $openid
+     *
      * @throws \SyException\Wx\WxException
      */
     public function setOpenid(string $openid)

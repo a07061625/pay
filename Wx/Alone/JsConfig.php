@@ -7,8 +7,8 @@
  */
 namespace Wx\Alone;
 
-use SyConstant\ErrorCode;
 use DesignPatterns\Singletons\WxConfigSingleton;
+use SyConstant\ErrorCode;
 use SyConstant\ProjectBase;
 use SyException\Wx\WxException;
 use SyTool\Tool;
@@ -33,6 +33,7 @@ class JsConfig extends WxBaseAlone
     private $url = '';
     /**
      * 平台类型 shop：公众号 openshop：第三方平台代理公众号
+     *
      * @var string
      */
     private $platType = '';
@@ -75,6 +76,7 @@ class JsConfig extends WxBaseAlone
 
     /**
      * @param string $url
+     *
      * @throws \SyException\Wx\WxException
      */
     public function setUrl(string $url)
@@ -88,6 +90,7 @@ class JsConfig extends WxBaseAlone
 
     /**
      * @param string $platType 平台类型 shop：公众号 openshop：第三方平台代理公众号
+     *
      * @throws \SyException\Wx\WxException
      */
     public function setPlatType(string $platType)
@@ -112,6 +115,7 @@ class JsConfig extends WxBaseAlone
 
         $needStr = 'jsapi_ticket=' . $ticket . '&noncestr=' . $this->reqData['nonceStr'] . '&timestamp=' . $this->reqData['timestamp'] . '&url=' . $this->url;
         $this->reqData['signature'] = sha1($needStr);
+
         return $this->reqData;
     }
 }

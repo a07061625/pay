@@ -12,8 +12,8 @@ use SyConstant\ProjectBase;
 use SyException\Wx\WxException;
 use SyTool\Tool;
 use Wx\WxBaseMini;
-use Wx\WxUtilBase;
 use Wx\WxUtilAlone;
+use Wx\WxUtilBase;
 use Wx\WxUtilOpenBase;
 
 class CustomMsgSend extends WxBaseMini
@@ -32,31 +32,37 @@ class CustomMsgSend extends WxBaseMini
 
     /**
      * 应用ID
+     *
      * @var string
      */
     private $appId = '';
     /**
      * 令牌
+     *
      * @var string
      */
     private $accessToken = '';
     /**
      * 用户openid
+     *
      * @var string
      */
     private $touser = '';
     /**
      * 消息类型
+     *
      * @var string
      */
     private $msgType = '';
     /**
      * 消息数据
+     *
      * @var array
      */
     private $msgData = [];
     /**
      * 平台类型
+     *
      * @var string
      */
     private $platType = '';
@@ -75,6 +81,7 @@ class CustomMsgSend extends WxBaseMini
 
     /**
      * @param string $openid
+     *
      * @throws \SyException\Wx\WxException
      */
     public function setOpenid(string $openid)
@@ -88,7 +95,8 @@ class CustomMsgSend extends WxBaseMini
 
     /**
      * @param string $msgType
-     * @param array $msgData
+     * @param array  $msgData
+     *
      * @throws \SyException\Wx\WxException
      */
     public function setMsgInfo(string $msgType, array $msgData)
@@ -105,6 +113,7 @@ class CustomMsgSend extends WxBaseMini
 
     /**
      * @param string $platType
+     *
      * @throws \SyException\Wx\WxException
      */
     public function setPlatType(string $platType)

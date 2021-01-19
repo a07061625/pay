@@ -12,38 +12,44 @@ use SyConstant\ProjectBase;
 use SyException\Wx\WxException;
 use SyTool\Tool;
 use Wx\WxBaseAccount;
-use Wx\WxUtilBase;
 use Wx\WxUtilAlone;
+use Wx\WxUtilBase;
 
 class TemplateMsgSend extends WxBaseAccount
 {
     /**
      * 公众号ID
+     *
      * @var string
      */
     private $appid = '';
     /**
      * 用户openid
+     *
      * @var string
      */
     private $openid = '';
     /**
      * 模版ID
+     *
      * @var string
      */
     private $template_id = '';
     /**
      * 重定向链接地址
+     *
      * @var string
      */
     private $redirect_url = '';
     /**
      * 小程序跳转数据
+     *
      * @var array
      */
     private $miniprogram = [];
     /**
      * 模版数据
+     *
      * @var array
      */
     private $template_data = [];
@@ -63,6 +69,7 @@ class TemplateMsgSend extends WxBaseAccount
 
     /**
      * @param string $openid
+     *
      * @throws \SyException\Wx\WxException
      */
     public function setOpenid(string $openid)
@@ -76,6 +83,7 @@ class TemplateMsgSend extends WxBaseAccount
 
     /**
      * @param string $templateId
+     *
      * @throws \SyException\Wx\WxException
      */
     public function setTemplateId(string $templateId)
@@ -89,6 +97,7 @@ class TemplateMsgSend extends WxBaseAccount
 
     /**
      * @param string $redirectUrl
+     *
      * @throws \SyException\Wx\WxException
      */
     public function setRedirectUrl(string $redirectUrl)
@@ -102,6 +111,7 @@ class TemplateMsgSend extends WxBaseAccount
 
     /**
      * @param array $miniProgram
+     *
      * @throws \SyException\Wx\WxException
      */
     public function setMiniProgram(array $miniProgram)

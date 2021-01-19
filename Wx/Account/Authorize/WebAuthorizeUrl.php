@@ -14,17 +14,20 @@ use Wx\WxBaseAccount;
 
 /**
  * 网站应用授权地址
+ *
  * @package Wx\Account\Authorize
  */
 class WebAuthorizeUrl extends WxBaseAccount
 {
     /**
      * 重定向链接
+     *
      * @var string
      */
     private $redirectUrl = '';
     /**
      * 防csrf攻击标识
+     *
      * @var string
      */
     private $state = '';
@@ -45,6 +48,7 @@ class WebAuthorizeUrl extends WxBaseAccount
 
     /**
      * @param string $redirectUrl
+     *
      * @throws \SyException\Wx\WxException
      */
     public function setRedirectUrl(string $redirectUrl)
@@ -58,6 +62,7 @@ class WebAuthorizeUrl extends WxBaseAccount
 
     /**
      * @param string $state
+     *
      * @throws \SyException\Wx\WxException
      */
     public function setState(string $state)

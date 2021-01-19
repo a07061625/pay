@@ -29,36 +29,42 @@ class Menu extends WxBaseAccount
 
     /**
      * 菜单标题
+     *
      * @var string
      */
     private $name = '';
 
     /**
      * 子菜单
+     *
      * @var array
      */
     private $sub_button = [];
 
     /**
      * 响应动作类型
+     *
      * @var string
      */
     private $type = '';
 
     /**
      * 菜单KEY值，用于消息接口推送
+     *
      * @var string
      */
     private $key = '';
 
     /**
      * 网页链接，用户点击菜单可打开链接
+     *
      * @var string
      */
     private $url = '';
 
     /**
      * 媒体ID
+     *
      * @var string
      */
     private $media_id = '';
@@ -74,6 +80,7 @@ class Menu extends WxBaseAccount
 
     /**
      * @param string $name
+     *
      * @throws \SyException\Wx\WxException
      */
     public function setName(string $name)
@@ -87,6 +94,7 @@ class Menu extends WxBaseAccount
 
     /**
      * @param array $sub
+     *
      * @throws \SyException\Wx\WxException
      */
     public function addSub(array $sub)
@@ -104,6 +112,7 @@ class Menu extends WxBaseAccount
 
     /**
      * @param string $type
+     *
      * @throws \SyException\Wx\WxException
      */
     public function setType(string $type)
@@ -127,6 +136,7 @@ class Menu extends WxBaseAccount
 
     /**
      * @param string $url
+     *
      * @throws \SyException\Wx\WxException
      */
     public function setUrl(string $url)
@@ -140,6 +150,7 @@ class Menu extends WxBaseAccount
 
     /**
      * @param string $mediaId
+     *
      * @throws \SyException\Wx\WxException
      */
     public function setMediaId(string $mediaId)

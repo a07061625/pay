@@ -7,8 +7,8 @@
  */
 namespace Wx\Payment\Coupon;
 
-use SyConstant\ErrorCode;
 use DesignPatterns\Singletons\WxConfigSingleton;
+use SyConstant\ErrorCode;
 use SyConstant\ProjectBase;
 use SyException\Wx\WxException;
 use SyTool\Tool;
@@ -20,56 +20,67 @@ class CouponSend extends WxBasePayment
 {
     /**
      * 代金券批次id
+     *
      * @var string
      */
     private $coupon_stock_id = '';
     /**
      * openid记录数
+     *
      * @var int
      */
     private $openid_count = 0;
     /**
      * 商户单据号
+     *
      * @var string
      */
     private $partner_trade_no = '';
     /**
      * 用户openid
+     *
      * @var string
      */
     private $openid = '';
     /**
      * 公众号ID
+     *
      * @var string
      */
     private $appid = '';
     /**
      * 商户号
+     *
      * @var string
      */
     private $mch_id = '';
     /**
      * 操作员
+     *
      * @var string
      */
     private $op_user_id = '';
     /**
      * 设备号
+     *
      * @var string
      */
     private $device_info = '';
     /**
      * 随机字符串
+     *
      * @var string
      */
     private $nonce_str = '';
     /**
      * 协议版本
+     *
      * @var string
      */
     private $version = '';
     /**
      * 协议类型
+     *
      * @var string
      */
     private $type = '';
@@ -94,6 +105,7 @@ class CouponSend extends WxBasePayment
 
     /**
      * @param string $couponStockId
+     *
      * @throws \SyException\Wx\WxException
      */
     public function setCouponStockId(string $couponStockId)
@@ -107,6 +119,7 @@ class CouponSend extends WxBasePayment
 
     /**
      * @param string $partnerTradeNo
+     *
      * @throws \SyException\Wx\WxException
      */
     public function setPartnerTradeNo(string $partnerTradeNo)
@@ -120,6 +133,7 @@ class CouponSend extends WxBasePayment
 
     /**
      * @param string $openid
+     *
      * @throws \SyException\Wx\WxException
      */
     public function setOpenid(string $openid)
@@ -133,6 +147,7 @@ class CouponSend extends WxBasePayment
 
     /**
      * @param string $opUserId
+     *
      * @throws \SyException\Wx\WxException
      */
     public function setOpUserId(string $opUserId)

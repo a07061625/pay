@@ -7,8 +7,8 @@
  */
 namespace Wx\Payment\Way;
 
-use SyConstant\ErrorCode;
 use DesignPatterns\Singletons\WxConfigSingleton;
+use SyConstant\ErrorCode;
 use SyConstant\ProjectBase;
 use SyException\Wx\WxException;
 use SyTool\Tool;
@@ -33,132 +33,154 @@ class UnifiedOrder extends WxBasePayment
 
     /**
      * 公众账号ID
+     *
      * @var string
      */
     private $appid = '';
 
     /**
      * 商户号
+     *
      * @var string
      */
     private $mch_id = '';
 
     /**
      * 设备号
+     *
      * @var string
      */
     private $device_info = '';
 
     /**
      * 随机字符串
+     *
      * @var string
      */
     private $nonce_str = '';
 
     /**
      * 商品描述
+     *
      * @var string
      */
     private $body = '';
 
     /**
      * 商品详情
+     *
      * @var string
      */
     private $detail = '';
 
     /**
      * 附加数据
+     *
      * @var string
      */
     private $attach = '';
 
     /**
      * 商户订单号
+     *
      * @var string
      */
     private $out_trade_no = '';
 
     /**
      * 标价币种
+     *
      * @var string
      */
     private $fee_type = '';
 
     /**
      * 标价金额,单位为分
+     *
      * @var int
      */
     private $total_fee = 0;
 
     /**
      * 终端IP
+     *
      * @var string
      */
     private $spbill_create_ip = '';
 
     /**
      * 交易起始时间,格式为yyyyMMddHHmmss
+     *
      * @var string
      */
     private $time_start = '';
 
     /**
      * 交易结束时间,格式为yyyyMMddHHmmss
+     *
      * @var string
      */
     private $time_expire = '';
 
     /**
      * 商品标记,使用代金券或立减优惠功能时需要的参数
+     *
      * @var string
      */
     private $goods_tag = '';
 
     /**
      * 异步接收微信支付结果通知的回调地址,通知url必须为外网可访问的url,不能携带参数
+     *
      * @var string
      */
     private $notify_url = '';
 
     /**
      * 交易类型,取值如下：JSAPI,NATIVE,APP等
+     *
      * @var string
      */
     private $trade_type = '';
 
     /**
      * 商品ID trade_type=NATIVE时（即扫码支付）,此参数必传
+     *
      * @var string
      */
     private $product_id = '';
 
     /**
      * 用户标识 trade_type=JSAPI时（即公众号支付）,此参数必传
+     *
      * @var string
      */
     private $openid = '';
 
     /**
      * 签名类型 签名类型,默认为MD5,支持HMAC-SHA256和MD5
+     *
      * @var string
      */
     private $sign_type = '';
 
     /**
      * 场景信息,json格式
+     *
      * @var string
      */
     private $scene_info = '';
 
     /**
      * 服务商分账状态,默认不分账 Y:需要分账 N:不分账
+     *
      * @var string
      */
     private $profit_sharing = '';
 
     /**
      * 平台类型
+     *
      * @var string
      */
     private $plat_type = '';
@@ -197,6 +219,7 @@ class UnifiedOrder extends WxBasePayment
 
     /**
      * @param string $body
+     *
      * @throws \SyException\Wx\WxException
      */
     public function setBody(string $body)
@@ -210,6 +233,7 @@ class UnifiedOrder extends WxBasePayment
 
     /**
      * @param string $attach
+     *
      * @throws \SyException\Wx\WxException
      */
     public function setAttach(string $attach)
@@ -223,6 +247,7 @@ class UnifiedOrder extends WxBasePayment
 
     /**
      * @param string $outTradeNo
+     *
      * @throws \SyException\Wx\WxException
      */
     public function setOutTradeNo(string $outTradeNo)
@@ -239,6 +264,7 @@ class UnifiedOrder extends WxBasePayment
 
     /**
      * @param int $totalFee
+     *
      * @throws \SyException\Wx\WxException
      */
     public function setTotalFee(int $totalFee)
@@ -252,6 +278,7 @@ class UnifiedOrder extends WxBasePayment
 
     /**
      * @param string $openid
+     *
      * @throws \SyException\Wx\WxException
      */
     public function setOpenid(string $openid)
@@ -269,6 +296,7 @@ class UnifiedOrder extends WxBasePayment
 
     /**
      * @param string $ip
+     *
      * @throws \SyException\Wx\WxException
      */
     public function setTerminalIp(string $ip)
@@ -282,6 +310,7 @@ class UnifiedOrder extends WxBasePayment
 
     /**
      * @param array $sceneInfo
+     *
      * @throws \SyException\Wx\WxException
      */
     public function setSceneInfo(array $sceneInfo)
@@ -305,6 +334,7 @@ class UnifiedOrder extends WxBasePayment
 
     /**
      * @param string $time_start 格式为yyyyMMddHHmmss
+     *
      * @throws \SyException\Wx\WxException
      */
     public function setTimeStart(string $time_start)
@@ -318,6 +348,7 @@ class UnifiedOrder extends WxBasePayment
 
     /**
      * @param string $time_expire 格式为yyyyMMddHHmmss
+     *
      * @throws \SyException\Wx\WxException
      */
     public function setTimeExpire(string $time_expire)
@@ -341,6 +372,7 @@ class UnifiedOrder extends WxBasePayment
 
     /**
      * @param string $plat_type
+     *
      * @throws \SyException\Wx\WxException
      */
     public function setPlatType(string $plat_type)
@@ -354,6 +386,7 @@ class UnifiedOrder extends WxBasePayment
 
     /**
      * @param string $profit_sharing
+     *
      * @throws \SyException\Wx\WxException
      */
     public function setProfitSharing(string $profit_sharing)
@@ -430,7 +463,7 @@ class UnifiedOrder extends WxBasePayment
             ];
             unset($payConfig);
 
-            if (in_array($this->plat_type, [WxUtilBase::PLAT_TYPE_SHOP, WxUtilBase::PLAT_TYPE_OPEN_SHOP,], true)) {
+            if (in_array($this->plat_type, [WxUtilBase::PLAT_TYPE_SHOP, WxUtilBase::PLAT_TYPE_OPEN_SHOP], true)) {
                 //获取js参数
                 $jsConfig = new JsConfig($appId);
                 $jsConfig->setPlatType($this->plat_type);

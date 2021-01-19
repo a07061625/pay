@@ -19,11 +19,13 @@ class SessionInfoCustom extends WxBaseAccount
 {
     /**
      * 公众号ID
+     *
      * @var string
      */
     private $appid = '';
     /**
      * 用户openid
+     *
      * @var string
      */
     private $openid = '';
@@ -41,6 +43,7 @@ class SessionInfoCustom extends WxBaseAccount
 
     /**
      * @param string $openid
+     *
      * @throws \SyException\Wx\WxException
      */
     public function setOpenid(string $openid)

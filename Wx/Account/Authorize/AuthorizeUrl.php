@@ -19,16 +19,19 @@ class AuthorizeUrl extends WxBaseAccount
 
     /**
      * 重定向链接
+     *
      * @var string
      */
     private $redirectUrl = '';
     /**
      * 授权类型
+     *
      * @var string
      */
     private $authType = '';
     /**
      * 防csrf攻击标识
+     *
      * @var string
      */
     private $state = '';
@@ -48,6 +51,7 @@ class AuthorizeUrl extends WxBaseAccount
 
     /**
      * @param string $redirectUrl
+     *
      * @throws \SyException\Wx\WxException
      */
     public function setRedirectUrl(string $redirectUrl)
@@ -61,6 +65,7 @@ class AuthorizeUrl extends WxBaseAccount
 
     /**
      * @param string $authType
+     *
      * @throws \SyException\Wx\WxException
      */
     public function setAuthType(string $authType)
@@ -76,6 +81,7 @@ class AuthorizeUrl extends WxBaseAccount
 
     /**
      * @param string $state
+     *
      * @throws \SyException\Wx\WxException
      */
     public function setState(string $state)

@@ -7,8 +7,8 @@
  */
 namespace Wx\Payment\RedPack;
 
-use SyConstant\ErrorCode;
 use DesignPatterns\Singletons\WxConfigSingleton;
+use SyConstant\ErrorCode;
 use SyConstant\ProjectBase;
 use SyException\Wx\WxException;
 use SyTool\Tool;
@@ -20,81 +20,97 @@ class RedPackGroup extends WxBasePayment
 {
     /**
      * 随机字符串
+     *
      * @var string
      */
     private $nonce_str = '';
     /**
      * 商户订单号
+     *
      * @var string
      */
     private $mch_billno = '';
     /**
      * 商户号
+     *
      * @var string
      */
     private $mch_id = '';
     /**
      * 公众账号app id
+     *
      * @var string
      */
     private $wxappid = '';
     /**
      * 商户名称
+     *
      * @var string
      */
     private $send_name = '';
     /**
      * 用户openid
+     *
      * @var string
      */
     private $re_openid = '';
     /**
      * 付款金额
+     *
      * @var int
      */
     private $total_amount = 0;
     /**
      * 红包发放总人数
+     *
      * @var int
      */
     private $total_num = 0;
     /**
      * 红包金额设置方式
+     *
      * @var string
      */
     private $amt_type = '';
     /**
      * 红包祝福语
+     *
      * @var string
      */
     private $wishing = '';
     /**
      * Ip地址
+     *
      * @var string
      */
     private $client_ip = '';
     /**
      * 活动名称
+     *
      * @var string
      */
     private $act_name = '';
     /**
      * 备注
+     *
      * @var string
      */
     private $remark = '';
     /**
      * 场景id
+     *
      * @var string
      */
     private $scene_id = '';
     /**
      * 活动信息
+     *
      * @var string
      */
     private $risk_info = '';
     /**
      * 资金授权商户号
+     *
      * @var string
      */
     private $consume_mch_id = '';
@@ -130,6 +146,7 @@ class RedPackGroup extends WxBasePayment
 
     /**
      * @param string $mchBillNo
+     *
      * @throws \SyException\Wx\WxException
      */
     public function setMchBillNo(string $mchBillNo)
@@ -143,6 +160,7 @@ class RedPackGroup extends WxBasePayment
 
     /**
      * @param string $sendName
+     *
      * @throws \SyException\Wx\WxException
      */
     public function setSendName(string $sendName)
@@ -156,6 +174,7 @@ class RedPackGroup extends WxBasePayment
 
     /**
      * @param string $openid
+     *
      * @throws \SyException\Wx\WxException
      */
     public function setReOpenid(string $openid)
@@ -169,6 +188,7 @@ class RedPackGroup extends WxBasePayment
 
     /**
      * @param int $totalAmount
+     *
      * @throws \SyException\Wx\WxException
      */
     public function setTotalAmount(int $totalAmount)
@@ -182,6 +202,7 @@ class RedPackGroup extends WxBasePayment
 
     /**
      * @param int $totalNum
+     *
      * @throws \SyException\Wx\WxException
      */
     public function setTotalNum(int $totalNum)
@@ -195,6 +216,7 @@ class RedPackGroup extends WxBasePayment
 
     /**
      * @param string $wishing
+     *
      * @throws \SyException\Wx\WxException
      */
     public function setWishing(string $wishing)
@@ -208,6 +230,7 @@ class RedPackGroup extends WxBasePayment
 
     /**
      * @param string $actName
+     *
      * @throws \SyException\Wx\WxException
      */
     public function setActName(string $actName)
@@ -221,6 +244,7 @@ class RedPackGroup extends WxBasePayment
 
     /**
      * @param string $remark
+     *
      * @throws \SyException\Wx\WxException
      */
     public function setRemark(string $remark)
@@ -234,6 +258,7 @@ class RedPackGroup extends WxBasePayment
 
     /**
      * @param string $sceneId
+     *
      * @throws \SyException\Wx\WxException
      */
     public function setSceneId(string $sceneId)
@@ -252,7 +277,7 @@ class RedPackGroup extends WxBasePayment
     {
         $infoStr = '';
         foreach ($riskInfo as $key => $val) {
-            if (in_array($key, ['posttime','mobile','deviceid','clientversion',], true) && (strlen($val) > 0)) {
+            if (in_array($key, ['posttime', 'mobile', 'deviceid', 'clientversion'], true) && (strlen($val) > 0)) {
                 $infoStr .= '&' . $key . '=' . $val;
             }
         }
@@ -264,6 +289,7 @@ class RedPackGroup extends WxBasePayment
 
     /**
      * @param string $consumeMchId
+     *
      * @throws \SyException\Wx\WxException
      */
     public function setConsumeMchId(string $consumeMchId)

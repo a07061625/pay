@@ -19,16 +19,19 @@ class SessionCreate extends WxBaseAccount
 {
     /**
      * 公众号ID
+     *
      * @var string
      */
     private $appid = '';
     /**
      * 客服帐号 格式为: 帐号前缀@公众号微信号
+     *
      * @var string
      */
     private $kf_account = '';
     /**
      * 用户openid
+     *
      * @var string
      */
     private $openid = '';
@@ -46,6 +49,7 @@ class SessionCreate extends WxBaseAccount
 
     /**
      * @param string $kfAccount
+     *
      * @throws \SyException\Wx\WxException
      */
     public function setKfAccount(string $kfAccount)
@@ -60,6 +64,7 @@ class SessionCreate extends WxBaseAccount
 
     /**
      * @param string $openid
+     *
      * @throws \SyException\Wx\WxException
      */
     public function setOpenid(string $openid)

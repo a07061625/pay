@@ -11,6 +11,7 @@ use Wx\WxUtilBase;
 
 /**
  * 批量更新发票状态
+ *
  * @package Wx\Corp\Invoice
  */
 class InvoiceStatusUpdateBatch extends WxBaseCorp
@@ -19,16 +20,19 @@ class InvoiceStatusUpdateBatch extends WxBaseCorp
 
     /**
      * 用户openid
+     *
      * @var string
      */
     private $openid = '';
     /**
      * 报销状态
+     *
      * @var string
      */
     private $reimburse_status = '';
     /**
      * 发票列表
+     *
      * @var array
      */
     private $invoice_list = [];
@@ -48,6 +52,7 @@ class InvoiceStatusUpdateBatch extends WxBaseCorp
 
     /**
      * @param string $openid
+     *
      * @throws \SyException\Wx\WxException
      */
     public function setOpenid(string $openid)
@@ -61,6 +66,7 @@ class InvoiceStatusUpdateBatch extends WxBaseCorp
 
     /**
      * @param string $reimburseStatus
+     *
      * @throws \SyException\Wx\WxException
      */
     public function setReimburseStatus(string $reimburseStatus)
@@ -74,6 +80,7 @@ class InvoiceStatusUpdateBatch extends WxBaseCorp
 
     /**
      * @param array $invoiceList
+     *
      * @throws \SyException\Wx\WxException
      */
     public function setInvoiceList(array $invoiceList)

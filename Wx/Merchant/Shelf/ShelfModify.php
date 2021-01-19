@@ -19,26 +19,31 @@ class ShelfModify extends WxBaseMerchant
 {
     /**
      * 公众号ID
+     *
      * @var string
      */
     private $appid = '';
     /**
      * 货架ID
+     *
      * @var int
      */
     private $shelf_id = 0;
     /**
      * 货架名称
+     *
      * @var string
      */
     private $shelf_name = '';
     /**
      * 货架招牌图片Url
+     *
      * @var string
      */
     private $shelf_banner = '';
     /**
      * 货架信息列表
+     *
      * @var array
      */
     private $shelf_data = [];
@@ -56,6 +61,7 @@ class ShelfModify extends WxBaseMerchant
 
     /**
      * @param int $shelfId
+     *
      * @throws \SyException\Wx\WxException
      */
     public function setShelfId(int $shelfId)
@@ -69,6 +75,7 @@ class ShelfModify extends WxBaseMerchant
 
     /**
      * @param string $shelfName
+     *
      * @throws \SyException\Wx\WxException
      */
     public function setShelfName(string $shelfName)
@@ -82,6 +89,7 @@ class ShelfModify extends WxBaseMerchant
 
     /**
      * @param string $shelfBanner
+     *
      * @throws \SyException\Wx\WxException
      */
     public function setShelfBanner(string $shelfBanner)
@@ -108,6 +116,7 @@ class ShelfModify extends WxBaseMerchant
 
     /**
      * @param array $shelfInfo
+     *
      * @throws \SyException\Wx\WxException
      */
     public function addShelfInfo(array $shelfInfo)

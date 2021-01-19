@@ -12,23 +12,26 @@ use SyConstant\ProjectBase;
 use SyException\Wx\WxException;
 use SyTool\Tool;
 use Wx\WxBaseAccount;
-use Wx\WxUtilBase;
 use Wx\WxUtilAlone;
+use Wx\WxUtilBase;
 
 class InfoBase extends WxBaseAccount
 {
     /**
      * 公众号ID
+     *
      * @var string
      */
     private $appid = '';
     /**
      * 用户openid
+     *
      * @var string
      */
     private $openid = '';
     /**
      * 微信令牌
+     *
      * @var string
      */
     private $access_token = '';
@@ -49,6 +52,7 @@ class InfoBase extends WxBaseAccount
 
     /**
      * @param string $openid
+     *
      * @throws \SyException\Wx\WxException
      */
     public function setOpenid(string $openid)
@@ -62,6 +66,7 @@ class InfoBase extends WxBaseAccount
 
     /**
      * @param string $accessToken
+     *
      * @throws \SyException\Wx\WxException
      */
     public function setAccessToken(string $accessToken)

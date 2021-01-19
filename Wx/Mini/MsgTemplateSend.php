@@ -12,49 +12,57 @@ use SyConstant\ProjectBase;
 use SyException\Wx\WxException;
 use SyTool\Tool;
 use Wx\WxBaseMini;
-use Wx\WxUtilBase;
 use Wx\WxUtilAlone;
+use Wx\WxUtilBase;
 use Wx\WxUtilOpenBase;
 
 class MsgTemplateSend extends WxBaseMini
 {
     /**
      * 应用ID
+     *
      * @var string
      */
     private $appId = '';
     /**
      * 用户openid
+     *
      * @var string
      */
     private $openid = '';
     /**
      * 模板ID
+     *
      * @var string
      */
     private $templateId = '';
     /**
      * 跳转页面
+     *
      * @var string
      */
     private $redirectUrl = '';
     /**
      * 表单ID
+     *
      * @var string
      */
     private $formId = '';
     /**
      * 模板内容
+     *
      * @var array
      */
     private $data = [];
     /**
      * 放大的关键词
+     *
      * @var string
      */
     private $emphasisKeyword = '';
     /**
      * 平台类型
+     *
      * @var string
      */
     private $platType = '';
@@ -75,6 +83,7 @@ class MsgTemplateSend extends WxBaseMini
 
     /**
      * @param string $openid
+     *
      * @throws \SyException\Wx\WxException
      */
     public function setOpenid(string $openid)
@@ -88,6 +97,7 @@ class MsgTemplateSend extends WxBaseMini
 
     /**
      * @param string $templateId
+     *
      * @throws \SyException\Wx\WxException
      */
     public function setTemplateId(string $templateId)
@@ -101,6 +111,7 @@ class MsgTemplateSend extends WxBaseMini
 
     /**
      * @param string $redirectUrl
+     *
      * @throws \SyException\Wx\WxException
      */
     public function setRedirectUrl(string $redirectUrl)
@@ -114,6 +125,7 @@ class MsgTemplateSend extends WxBaseMini
 
     /**
      * @param string $formId
+     *
      * @throws \SyException\Wx\WxException
      */
     public function setFormId(string $formId)
@@ -135,6 +147,7 @@ class MsgTemplateSend extends WxBaseMini
 
     /**
      * @param string $emphasisKeyword
+     *
      * @throws \SyException\Wx\WxException
      */
     public function setEmphasisKeyword(string $emphasisKeyword)
@@ -148,6 +161,7 @@ class MsgTemplateSend extends WxBaseMini
 
     /**
      * @param string $platType
+     *
      * @throws \SyException\Wx\WxException
      */
     public function setPlatType(string $platType)

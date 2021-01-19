@@ -7,8 +7,8 @@
  */
 namespace Wx\Payment\Coupon;
 
-use SyConstant\ErrorCode;
 use DesignPatterns\Singletons\WxConfigSingleton;
+use SyConstant\ErrorCode;
 use SyConstant\ProjectBase;
 use SyException\Wx\WxException;
 use SyTool\Tool;
@@ -20,51 +20,61 @@ class CouponQueryInfo extends WxBasePayment
 {
     /**
      * 代金券id
+     *
      * @var string
      */
     private $coupon_id = '';
     /**
      * 用户openid
+     *
      * @var string
      */
     private $openid = '';
     /**
      * 公众号ID
+     *
      * @var string
      */
     private $appid = '';
     /**
      * 商户号
+     *
      * @var string
      */
     private $mch_id = '';
     /**
      * 批次号
+     *
      * @var string
      */
     private $stock_id = '';
     /**
      * 操作员
+     *
      * @var string
      */
     private $op_user_id = '';
     /**
      * 设备号
+     *
      * @var string
      */
     private $device_info = '';
     /**
      * 随机字符串
+     *
      * @var string
      */
     private $nonce_str = '';
     /**
      * 协议版本
+     *
      * @var string
      */
     private $version = '';
     /**
      * 协议类型
+     *
      * @var string
      */
     private $type = '';
@@ -88,6 +98,7 @@ class CouponQueryInfo extends WxBasePayment
 
     /**
      * @param string $couponId
+     *
      * @throws \SyException\Wx\WxException
      */
     public function setCouponId(string $couponId)
@@ -101,6 +112,7 @@ class CouponQueryInfo extends WxBasePayment
 
     /**
      * @param string $openid
+     *
      * @throws \SyException\Wx\WxException
      */
     public function setOpenid(string $openid)
@@ -114,6 +126,7 @@ class CouponQueryInfo extends WxBasePayment
 
     /**
      * @param string $stockId
+     *
      * @throws \SyException\Wx\WxException
      */
     public function setStockId(string $stockId)
@@ -127,6 +140,7 @@ class CouponQueryInfo extends WxBasePayment
 
     /**
      * @param string $opUserId
+     *
      * @throws \SyException\Wx\WxException
      */
     public function setOpUserId(string $opUserId)

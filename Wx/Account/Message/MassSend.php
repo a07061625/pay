@@ -19,16 +19,19 @@ class MassSend extends WxBaseAccount
 {
     /**
      * 公众号ID
+     *
      * @var string
      */
     private $appid = '';
     /**
      * 消息类型
+     *
      * @var string
      */
     private $msgtype = '';
     /**
      * 用户openid列表
+     *
      * @var array
      */
     private $touser = [];
@@ -46,7 +49,8 @@ class MassSend extends WxBaseAccount
 
     /**
      * @param string $type
-     * @param array $data
+     * @param array  $data
+     *
      * @throws \SyException\Wx\WxException
      */
     public function setMsgData(string $type, array $data)
@@ -88,6 +92,7 @@ class MassSend extends WxBaseAccount
 
     /**
      * @param string $openid
+     *
      * @throws \SyException\Wx\WxException
      */
     public function addOpenid(string $openid)

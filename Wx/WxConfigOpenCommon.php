@@ -16,72 +16,86 @@ class WxConfigOpenCommon
 {
     /**
      * 开放平台access token超时时间,单位为秒
+     *
      * @var int
      */
     private $expireComponentAccessToken = 0;
 
     /**
      * 授权者access token超时时间,单位为秒
+     *
      * @var int
      */
     private $expireAuthorizerAccessToken = 0;
     /**
      * 授权者js ticket超时时间,单位为秒
+     *
      * @var int
      */
     private $expireAuthorizerJsTicket = 0;
     /**
      * 开放平台微信号
+     *
      * @var string
      */
     private $appId = '';
     /**
      * 开放平台随机密钥
+     *
      * @var string
      */
     private $secret = '';
     /**
      * 开放平台消息校验token
+     *
      * @var string
      */
     private $token = '';
     /**
      * 开放平台旧消息加解密key
+     *
      * @var string
      */
     private $aesKeyBefore = '';
     /**
      * 开放平台新消息加解密key
+     *
      * @var string
      */
     private $aesKeyNow = '';
     /**
      * 开放平台授权页面域名
+     *
      * @var string
      */
     private $urlAuth = '';
     /**
      * 开放平台授权页面回跳地址
+     *
      * @var string
      */
     private $urlAuthCallback = '';
     /**
      * 开放平台换绑小程序管理员回跳地址
+     *
      * @var string
      */
     private $urlMiniRebindAdmin = '';
     /**
      * 开放平台快速注册小程序回跳地址
+     *
      * @var string
      */
     private $urlMiniFastRegister = '';
     /**
      * 开放平台小程序服务域名列表
+     *
      * @var array
      */
     private $domainMiniServers = [];
     /**
      * 开放平台小程序业务域名列表
+     *
      * @var array
      */
     private $domainMiniWebViews = [];
@@ -109,6 +123,7 @@ class WxConfigOpenCommon
 
     /**
      * @param int $expireComponentAccessToken
+     *
      * @throws \SyException\Wx\WxOpenException
      */
     public function setExpireComponentAccessToken(int $expireComponentAccessToken)
@@ -130,6 +145,7 @@ class WxConfigOpenCommon
 
     /**
      * @param int $expireAuthorizerAccessToken
+     *
      * @throws \SyException\Wx\WxOpenException
      */
     public function setExpireAuthorizerAccessToken(int $expireAuthorizerAccessToken)
@@ -151,6 +167,7 @@ class WxConfigOpenCommon
 
     /**
      * @param int $expireAuthorizerJsTicket
+     *
      * @throws \SyException\Wx\WxOpenException
      */
     public function setExpireAuthorizerJsTicket(int $expireAuthorizerJsTicket)
@@ -172,6 +189,7 @@ class WxConfigOpenCommon
 
     /**
      * @param string $appId
+     *
      * @throws \SyException\Wx\WxOpenException
      */
     public function setAppId(string $appId)
@@ -193,6 +211,7 @@ class WxConfigOpenCommon
 
     /**
      * @param string $secret
+     *
      * @throws \SyException\Wx\WxOpenException
      */
     public function setSecret(string $secret)
@@ -214,6 +233,7 @@ class WxConfigOpenCommon
 
     /**
      * @param string $token
+     *
      * @throws \SyException\Wx\WxOpenException
      */
     public function setToken(string $token)
@@ -235,6 +255,7 @@ class WxConfigOpenCommon
 
     /**
      * @param string $aesKeyBefore
+     *
      * @throws \SyException\Wx\WxOpenException
      */
     public function setAesKeyBefore(string $aesKeyBefore)
@@ -256,6 +277,7 @@ class WxConfigOpenCommon
 
     /**
      * @param string $aesKeyNow
+     *
      * @throws \SyException\Wx\WxOpenException
      */
     public function setAesKeyNow(string $aesKeyNow)
@@ -277,6 +299,7 @@ class WxConfigOpenCommon
 
     /**
      * @param string $urlAuth
+     *
      * @throws \SyException\Wx\WxOpenException
      */
     public function setUrlAuth(string $urlAuth)
@@ -298,6 +321,7 @@ class WxConfigOpenCommon
 
     /**
      * @param string $urlAuthCallback
+     *
      * @throws \SyException\Wx\WxOpenException
      */
     public function setUrlAuthCallback(string $urlAuthCallback)
@@ -319,6 +343,7 @@ class WxConfigOpenCommon
 
     /**
      * @param string $urlMiniRebindAdmin
+     *
      * @throws \SyException\Wx\WxOpenException
      */
     public function setUrlMiniRebindAdmin(string $urlMiniRebindAdmin)
@@ -340,6 +365,7 @@ class WxConfigOpenCommon
 
     /**
      * @param string $urlMiniFastRegister
+     *
      * @throws \SyException\Wx\WxOpenException
      */
     public function setUrlMiniFastRegister(string $urlMiniFastRegister)

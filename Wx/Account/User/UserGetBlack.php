@@ -19,11 +19,13 @@ class UserGetBlack extends WxBaseAccount
 {
     /**
      * 公众号ID
+     *
      * @var string
      */
     private $appid = '';
     /**
      * 第一个用户openid
+     *
      * @var string
      */
     private $begin_openid = '';
@@ -42,6 +44,7 @@ class UserGetBlack extends WxBaseAccount
 
     /**
      * @param string $beginOpenid
+     *
      * @throws \SyException\Wx\WxException
      */
     public function setBeginOpenid(string $beginOpenid)

@@ -19,11 +19,13 @@ class UserGet extends WxBaseAccount
 {
     /**
      * 公众号ID
+     *
      * @var string
      */
     private $appid = '';
     /**
      * 第一个用户openid
+     *
      * @var string
      */
     private $next_openid = '';
@@ -42,6 +44,7 @@ class UserGet extends WxBaseAccount
 
     /**
      * @param string $nextOpenid
+     *
      * @throws \SyException\Wx\WxException
      */
     public function setNextOpenid(string $nextOpenid)

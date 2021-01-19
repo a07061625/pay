@@ -17,31 +17,37 @@ class SubscribeMsgAuthorize extends WxBaseAccount
 {
     /**
      * 公众号ID
+     *
      * @var string
      */
     private $appid = '';
     /**
      * 动作标识
+     *
      * @var string
      */
     private $action = '';
     /**
      * 订阅场景值
+     *
      * @var int
      */
     private $scene = 0;
     /**
      * 消息模板ID
+     *
      * @var string
      */
     private $template_id = '';
     /**
      * 重定向地址
+     *
      * @var string
      */
     private $redirect_url = '';
     /**
      * 防止跨站请求伪造攻击标识
+     *
      * @var string
      */
     private $reserved = '';
@@ -60,6 +66,7 @@ class SubscribeMsgAuthorize extends WxBaseAccount
 
     /**
      * @param int $scene
+     *
      * @throws \SyException\Wx\WxException
      */
     public function setScene(int $scene)
@@ -73,6 +80,7 @@ class SubscribeMsgAuthorize extends WxBaseAccount
 
     /**
      * @param string $templateId
+     *
      * @throws \SyException\Wx\WxException
      */
     public function setTemplateId(string $templateId)
@@ -86,6 +94,7 @@ class SubscribeMsgAuthorize extends WxBaseAccount
 
     /**
      * @param string $redirectUrl
+     *
      * @throws \SyException\Wx\WxException
      */
     public function setRedirectUrl(string $redirectUrl)
@@ -99,6 +108,7 @@ class SubscribeMsgAuthorize extends WxBaseAccount
 
     /**
      * @param string $reserved
+     *
      * @throws \SyException\Wx\WxException
      */
     public function setReserved(string $reserved)

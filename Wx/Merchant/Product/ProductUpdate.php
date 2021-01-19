@@ -19,66 +19,79 @@ class ProductUpdate extends WxBaseMerchant
 {
     /**
      * 公众号ID
+     *
      * @var string
      */
     private $appid = '';
     /**
      * 商品ID
+     *
      * @var string
      */
     private $product_id = '';
     /**
      * 商品名称
+     *
      * @var string
      */
     private $name = '';
     /**
      * 商品分类id
+     *
      * @var array
      */
     private $category_id = [];
     /**
      * 商品主图
+     *
      * @var string
      */
     private $main_img = '';
     /**
      * 商品图片列表
+     *
      * @var array
      */
     private $img = [];
     /**
      * 商品详情列表
+     *
      * @var array
      */
     private $detail = [];
     /**
      * 商品属性列表
+     *
      * @var array
      */
     private $property = [];
     /**
      * 商品sku信息
+     *
      * @var array
      */
     private $sku_info = [];
     /**
      * 商品限购数量
+     *
      * @var int
      */
     private $buy_limit = 0;
     /**
      * 商品sku信息列表
+     *
      * @var array
      */
     private $sku_list = [];
     /**
      * 商品其他属性
+     *
      * @var array
      */
     private $attrext = [];
     /**
      * 运费信息
+     *
      * @var array
      */
     private $delivery_info = [];
@@ -97,6 +110,7 @@ class ProductUpdate extends WxBaseMerchant
 
     /**
      * @param string $productId
+     *
      * @throws \SyException\Wx\WxException
      */
     public function setProductId(string $productId)
@@ -110,6 +124,7 @@ class ProductUpdate extends WxBaseMerchant
 
     /**
      * @param string $name
+     *
      * @throws \SyException\Wx\WxException
      */
     public function setName(string $name)
@@ -135,6 +150,7 @@ class ProductUpdate extends WxBaseMerchant
 
     /**
      * @param int $categoryId
+     *
      * @throws \SyException\Wx\WxException
      */
     public function addCategoryId(int $categoryId)
@@ -148,6 +164,7 @@ class ProductUpdate extends WxBaseMerchant
 
     /**
      * @param string $mainImg
+     *
      * @throws \SyException\Wx\WxException
      */
     public function setMainImg(string $mainImg)
@@ -173,6 +190,7 @@ class ProductUpdate extends WxBaseMerchant
 
     /**
      * @param string $img
+     *
      * @throws \SyException\Wx\WxException
      */
     public function addImg(string $img)
@@ -198,6 +216,7 @@ class ProductUpdate extends WxBaseMerchant
 
     /**
      * @param array $detailInfo
+     *
      * @throws \SyException\Wx\WxException
      */
     public function addDetail(array $detailInfo)
@@ -222,6 +241,7 @@ class ProductUpdate extends WxBaseMerchant
 
     /**
      * @param array $propertyInfo
+     *
      * @throws \SyException\Wx\WxException
      */
     public function addProperty(array $propertyInfo)
@@ -246,6 +266,7 @@ class ProductUpdate extends WxBaseMerchant
 
     /**
      * @param array $skuInfo
+     *
      * @throws \SyException\Wx\WxException
      */
     public function addSkuInfo(array $skuInfo)
@@ -258,6 +279,7 @@ class ProductUpdate extends WxBaseMerchant
 
     /**
      * @param int $buyLimit
+     *
      * @throws \SyException\Wx\WxException
      */
     public function setBuyLimit(int $buyLimit)
@@ -283,6 +305,7 @@ class ProductUpdate extends WxBaseMerchant
 
     /**
      * @param array $sku
+     *
      * @throws \SyException\Wx\WxException
      */
     public function addSkuList(array $sku)
@@ -295,6 +318,7 @@ class ProductUpdate extends WxBaseMerchant
 
     /**
      * @param array $attrext
+     *
      * @throws \SyException\Wx\WxException
      */
     public function setAttrext(array $attrext)
@@ -307,6 +331,7 @@ class ProductUpdate extends WxBaseMerchant
 
     /**
      * @param array $deliveryInfo
+     *
      * @throws \SyException\Wx\WxException
      */
     public function setDeliveryInfo(array $deliveryInfo)

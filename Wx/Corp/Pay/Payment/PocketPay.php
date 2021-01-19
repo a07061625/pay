@@ -7,8 +7,8 @@
  */
 namespace Wx\Corp\Pay\Payment;
 
-use SyConstant\ErrorCode;
 use DesignPatterns\Singletons\WxConfigSingleton;
+use SyConstant\ErrorCode;
 use SyConstant\ProjectBase;
 use SyException\Wx\WxException;
 use SyLog\Log;
@@ -19,6 +19,7 @@ use Wx\WxUtilCorp;
 
 /**
  * 向员工付款
+ *
  * @package Wx\Corp\Pay\Payment
  */
 class PocketPay extends WxBaseCorp
@@ -30,86 +31,103 @@ class PocketPay extends WxBaseCorp
 
     /**
      * 企业ID
+     *
      * @var string
      */
     private $appid = '';
     /**
      * 商户号
+     *
      * @var string
      */
     private $mch_id = '';
     /**
      * 设备号
+     *
      * @var string
      */
     private $device_info = '';
     /**
      * 随机字符串
+     *
      * @var string
      */
     private $nonce_str = '';
     /**
      * 商户订单号
+     *
      * @var string
      */
     private $partner_trade_no = '';
     /**
      * 用户openid
+     *
      * @var string
      */
     private $openid = '';
     /**
      * 校验用户姓名选项
+     *
      * @var string
      */
     private $check_name = '';
     /**
      * 收款用户姓名
+     *
      * @var string
      */
     private $re_user_name = '';
     /**
      * 金额
+     *
      * @var int
      */
     private $amount = 0;
     /**
      * 付款说明
+     *
      * @var string
      */
     private $desc = '';
     /**
      * Ip地址
+     *
      * @var string
      */
     private $spbill_create_ip = '';
     /**
      * 付款消息类型
+     *
      * @var string
      */
     private $ww_msg_type = '';
     /**
      * 审批单号
+     *
      * @var string
      */
     private $approval_number = '';
     /**
      * 审批类型
+     *
      * @var int
      */
     private $approval_type = 0;
     /**
      * 项目名称
+     *
      * @var string
      */
     private $act_name = '';
     /**
      * 应用id
+     *
      * @var string
      */
     private $agentid = '';
     /**
      * 应用密钥
+     *
      * @var string
      */
     private $agentSecret = '';
@@ -137,6 +155,7 @@ class PocketPay extends WxBaseCorp
 
     /**
      * @param string $deviceInfo
+     *
      * @throws \SyException\Wx\WxException
      */
     public function setDeviceInfo(string $deviceInfo)
@@ -150,6 +169,7 @@ class PocketPay extends WxBaseCorp
 
     /**
      * @param string $partnerTradeNo
+     *
      * @throws \SyException\Wx\WxException
      */
     public function setPartnerTradeNo(string $partnerTradeNo)
@@ -163,6 +183,7 @@ class PocketPay extends WxBaseCorp
 
     /**
      * @param string $openid
+     *
      * @throws \SyException\Wx\WxException
      */
     public function setOpenid(string $openid)
@@ -176,6 +197,7 @@ class PocketPay extends WxBaseCorp
 
     /**
      * @param string $checkName
+     *
      * @throws \SyException\Wx\WxException
      */
     public function setCheckName(string $checkName)
@@ -202,6 +224,7 @@ class PocketPay extends WxBaseCorp
 
     /**
      * @param int $amount
+     *
      * @throws \SyException\Wx\WxException
      */
     public function setAmount(int $amount)
@@ -215,6 +238,7 @@ class PocketPay extends WxBaseCorp
 
     /**
      * @param string $desc
+     *
      * @throws \SyException\Wx\WxException
      */
     public function setDesc(string $desc)
@@ -228,6 +252,7 @@ class PocketPay extends WxBaseCorp
 
     /**
      * @param string $msgType
+     *
      * @throws \SyException\Wx\WxException
      */
     public function setMsgType(string $msgType)
@@ -245,6 +270,7 @@ class PocketPay extends WxBaseCorp
 
     /**
      * @param string $approvalNumber
+     *
      * @throws \SyException\Wx\WxException
      */
     public function setApprovalNumber(string $approvalNumber)
@@ -260,6 +286,7 @@ class PocketPay extends WxBaseCorp
 
     /**
      * @param string $actName
+     *
      * @throws \SyException\Wx\WxException
      */
     public function setActName(string $actName)

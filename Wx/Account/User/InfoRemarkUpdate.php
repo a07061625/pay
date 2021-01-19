@@ -19,16 +19,19 @@ class InfoRemarkUpdate extends WxBaseAccount
 {
     /**
      * 公众号ID
+     *
      * @var string
      */
     private $appid = '';
     /**
      * 用户openid
+     *
      * @var string
      */
     private $openid = '';
     /**
      * 备注
+     *
      * @var string
      */
     private $remark = '';
@@ -46,6 +49,7 @@ class InfoRemarkUpdate extends WxBaseAccount
 
     /**
      * @param string $openid
+     *
      * @throws \SyException\Wx\WxException
      */
     public function setOpenid(string $openid)
@@ -59,6 +63,7 @@ class InfoRemarkUpdate extends WxBaseAccount
 
     /**
      * @param string $remark
+     *
      * @throws \SyException\Wx\WxException
      */
     public function setRemark(string $remark)

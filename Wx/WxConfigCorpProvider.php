@@ -15,41 +15,49 @@ class WxConfigCorpProvider
 {
     /**
      * 企业ID
+     *
      * @var string
      */
     private $corpId = '';
     /**
      * 企业密钥
+     *
      * @var string
      */
     private $corpSecret = '';
     /**
      * 消息校验token
+     *
      * @var string
      */
     private $token = '';
     /**
      * 消息加解密key
+     *
      * @var string
      */
     private $aesKey = '';
     /**
      * 套件ID
+     *
      * @var string
      */
     private $suiteId = '';
     /**
      * 套件密钥
+     *
      * @var string
      */
     private $suiteSecret = '';
     /**
      * 套件授权地址
+     *
      * @var string
      */
     private $urlAuthSuite = '';
     /**
      * 登录授权地址
+     *
      * @var string
      */
     private $urlAuthLogin = '';
@@ -72,6 +80,7 @@ class WxConfigCorpProvider
 
     /**
      * @param string $corpId
+     *
      * @throws \SyException\Wx\WxException
      */
     public function setCorpId(string $corpId)
@@ -93,6 +102,7 @@ class WxConfigCorpProvider
 
     /**
      * @param string $corpSecret
+     *
      * @throws \SyException\Wx\WxException
      */
     public function setCorpSecret(string $corpSecret)
@@ -114,6 +124,7 @@ class WxConfigCorpProvider
 
     /**
      * @param string $token
+     *
      * @throws \SyException\Wx\WxException
      */
     public function setToken(string $token)
@@ -135,6 +146,7 @@ class WxConfigCorpProvider
 
     /**
      * @param string $aesKey
+     *
      * @throws \SyException\Wx\WxException
      */
     public function setAesKey(string $aesKey)
@@ -156,6 +168,7 @@ class WxConfigCorpProvider
 
     /**
      * @param string $suiteId
+     *
      * @throws \SyException\Wx\WxException
      */
     public function setSuiteId(string $suiteId)
@@ -177,6 +190,7 @@ class WxConfigCorpProvider
 
     /**
      * @param string $suiteSecret
+     *
      * @throws \SyException\Wx\WxException
      */
     public function setSuiteSecret(string $suiteSecret)
@@ -198,6 +212,7 @@ class WxConfigCorpProvider
 
     /**
      * @param string $urlAuthSuite
+     *
      * @throws \SyException\Wx\WxException
      */
     public function setUrlAuthSuite(string $urlAuthSuite)
@@ -219,6 +234,7 @@ class WxConfigCorpProvider
 
     /**
      * @param string $urlAuthLogin
+     *
      * @throws \SyException\Wx\WxException
      */
     public function setUrlAuthLogin(string $urlAuthLogin)

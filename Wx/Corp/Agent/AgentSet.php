@@ -7,8 +7,8 @@
  */
 namespace Wx\Corp\Agent;
 
-use SyConstant\ErrorCode;
 use DesignPatterns\Singletons\WxConfigSingleton;
+use SyConstant\ErrorCode;
 use SyConstant\ProjectBase;
 use SyException\Wx\WxException;
 use SyTool\Tool;
@@ -18,6 +18,7 @@ use Wx\WxUtilBase;
 
 /**
  * 设置应用
+ *
  * @package Wx\Corp\Agent
  */
 class AgentSet extends WxBaseCorp
@@ -26,41 +27,49 @@ class AgentSet extends WxBaseCorp
 
     /**
      * 应用ID
+     *
      * @var string
      */
     private $agentid = '';
     /**
      * 地理位置上报标识 0:不上报 1:上报
+     *
      * @var int
      */
     private $report_location_flag = 0;
     /**
      * 应用头像
+     *
      * @var string
      */
     private $logo_mediaid = '';
     /**
      * 应用名称
+     *
      * @var string
      */
     private $name = '';
     /**
      * 应用详情
+     *
      * @var string
      */
     private $description = '';
     /**
      * 应用可信域名
+     *
      * @var string
      */
     private $redirect_domain = '';
     /**
      * 用户进入上报标识 0:不接收 1:接收
+     *
      * @var int
      */
     private $isreportenter = 0;
     /**
      * 应用主页url
+     *
      * @var string
      */
     private $home_url = '';
@@ -83,6 +92,7 @@ class AgentSet extends WxBaseCorp
 
     /**
      * @param int $reportLocationFlag
+     *
      * @throws \SyException\Wx\WxException
      */
     public function setReportLocationFlag(int $reportLocationFlag)
@@ -108,6 +118,7 @@ class AgentSet extends WxBaseCorp
 
     /**
      * @param string $name
+     *
      * @throws \SyException\Wx\WxException
      */
     public function setName(string $name)
@@ -121,6 +132,7 @@ class AgentSet extends WxBaseCorp
 
     /**
      * @param string $description
+     *
      * @throws \SyException\Wx\WxException
      */
     public function setDescription(string $description)
@@ -137,6 +149,7 @@ class AgentSet extends WxBaseCorp
 
     /**
      * @param string $redirectDomain
+     *
      * @throws \SyException\Wx\WxException
      */
     public function setRedirectDomain(string $redirectDomain)
@@ -150,6 +163,7 @@ class AgentSet extends WxBaseCorp
 
     /**
      * @param int $reportEnterFlag
+     *
      * @throws \SyException\Wx\WxException
      */
     public function setReportEnterFlag(int $reportEnterFlag)
@@ -163,6 +177,7 @@ class AgentSet extends WxBaseCorp
 
     /**
      * @param string $homeUrl
+     *
      * @throws \SyException\Wx\WxException
      */
     public function setHomeUrl(string $homeUrl)

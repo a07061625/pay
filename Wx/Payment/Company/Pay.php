@@ -7,8 +7,8 @@
  */
 namespace Wx\Payment\Company;
 
-use SyConstant\ErrorCode;
 use DesignPatterns\Singletons\WxConfigSingleton;
+use SyConstant\ErrorCode;
 use SyConstant\ProjectBase;
 use SyException\Wx\WxException;
 use SyLog\Log;
@@ -24,46 +24,55 @@ class Pay extends WxBasePayment
 
     /**
      * 商户号
+     *
      * @var string
      */
     private $mchid = '';
     /**
      * 随机字符串
+     *
      * @var string
      */
     private $nonce_str = '';
     /**
      * 商户订单号
+     *
      * @var string
      */
     private $partner_trade_no = '';
     /**
      * 用户openid
+     *
      * @var string
      */
     private $openid = '';
     /**
      * 校验用户姓名选项
+     *
      * @var string
      */
     private $check_name = '';
     /**
      * 收款用户姓名
+     *
      * @var string
      */
     private $re_user_name = '';
     /**
      * 金额
+     *
      * @var int
      */
     private $amount = 0;
     /**
      * 企业付款描述信息
+     *
      * @var string
      */
     private $desc = '';
     /**
      * Ip地址
+     *
      * @var string
      */
     private $spbill_create_ip = '';
@@ -87,6 +96,7 @@ class Pay extends WxBasePayment
 
     /**
      * @param string $outTradeNo
+     *
      * @throws \SyException\Wx\WxException
      */
     public function setOutTradeNo(string $outTradeNo)
@@ -100,6 +110,7 @@ class Pay extends WxBasePayment
 
     /**
      * @param string $openid
+     *
      * @throws \SyException\Wx\WxException
      */
     public function setOpenid(string $openid)
@@ -113,6 +124,7 @@ class Pay extends WxBasePayment
 
     /**
      * @param string $checkName
+     *
      * @throws \SyException\Wx\WxException
      */
     public function setCheckName(string $checkName)
@@ -139,6 +151,7 @@ class Pay extends WxBasePayment
 
     /**
      * @param int $amount
+     *
      * @throws \SyException\Wx\WxException
      */
     public function setAmount(int $amount)
@@ -152,6 +165,7 @@ class Pay extends WxBasePayment
 
     /**
      * @param string $desc
+     *
      * @throws \SyException\Wx\WxException
      */
     public function setDesc(string $desc)
