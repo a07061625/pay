@@ -67,4 +67,18 @@ class ProjectBase
     const TIME_EXPIRE_LOCAL_PAY_UNION_CHANNELS_CLEAR = 3600; //超时时间-本地银联支付全渠道配置清理,单位为秒
     const TIME_EXPIRE_LOCAL_PAY_UNION_QUICK_PASS_REFRESH = 600; //超时时间-本地银联支付云闪付配置更新,单位为秒
     const TIME_EXPIRE_LOCAL_PAY_UNION_QUICK_PASS_CLEAR = 3600; //超时时间-本地银联支付云闪付配置清理,单位为秒
+
+    //正则表达式常量
+    const REGEX_IP = '/^(\.(\d|[1-9]\d|1\d{2}|2[0-4]\d|25[0-5])){4}$/'; //ip地址
+    const REGEX_EMAIL = '/^\w+([-+.]\w+)*\@\w+([-.]\w+)*\.\w+([-.]\w+)*$/'; //邮箱
+    const REGEX_TEL = '/^((\d{3,4}\-?)?\d{7,8}|1\d{10}|\d{5})$/'; //联系方式
+    const REGEX_URL = '/^(http|https|ftp)\:\/\/\S+$/'; //链接地址
+    const REGEX_URL_HTTP = '/^(http|https)\:\/\/\S+$/'; //链接地址-http
+    const REGEX_ALIPAY_SHOP_CONTACT = '/^[0-9\+\-]{5,15}$/'; //支付宝-门店电话号码
+    const REGEX_LOCATION_LNG = '/^[-]?(\d(\.\d+)?|[1-9]\d(\.\d+)?|1[0-7]\d(\.\d+)?|180)$/'; //地区-经度
+    const REGEX_LOCATION_LAT = '/^[\-]?(\d(\.\d+)?|[1-8]\d(\.\d+)?|90)$/'; //地区-纬度
+    const REGEX_PROMOTION_TBK_PID = '/^mm(_\d{1,12}){3}$/'; //淘宝客-pid
+    const REGEX_URI_YAF = '/^\/[0-9a-zA-Z\/]*$/'; //URI-yaf
+    const REGEX_WX_ORIGIN_ID = '/^[0-9a-z_]{15}$/'; //微信-原始ID
+    const REGEX_WX_OPEN_ID = '/^[0-9a-zA-Z\-\_]{28}$/'; //微信-openid
 }
