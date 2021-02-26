@@ -8,3 +8,8 @@ if (!defined('SY_PAY_PAYPAL_ENV')) {
 if (!defined('SY_CONFIG_PREFIX')) {
     define('SY_CONFIG_PREFIX', '');
 }
+
+//redis服务版本号
+if (!defined('SY_VERSION_REDIS')) {
+    define('SY_VERSION_REDIS', '6.2.0');
+}
