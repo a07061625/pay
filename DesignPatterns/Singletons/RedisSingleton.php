@@ -19,18 +19,20 @@ class RedisSingleton
 
     /**
      * 数据库索引
+     *
      * @var int
      */
     private $dbIndex = 0;
     /**
      * 客户端连接名称
+     *
      * @var string
      */
     private $clientName = '';
     /**
      * @var \Redis
      */
-    private $conn = null;
+    private $conn;
     /**
      * @var int
      */
@@ -71,7 +73,9 @@ class RedisSingleton
 
     /**
      * 切换数据库
+     *
      * @param int $dbIndex 数据库索引
+     *
      * @throws \SyException\Redis\RedisException
      */
     public function changeDb(int $dbIndex)
@@ -92,6 +96,7 @@ class RedisSingleton
 
     /**
      * 获取当前数据库索引
+     *
      * @return int
      */
     public function getCurrentDb()
