@@ -15,37 +15,41 @@ class ProjectBase
 
     //REDIS常量 后五位全数字的前缀为框架内部前缀,微信:10000-14999 支付宝:15000-19999
     /**
+     * redis-前缀-公共部分
+     */
+    const REDIS_PREFIX_COMMON = 'sy' . SY_PROJECT;
+    /**
      * redis-前缀-微信公众号
      */
-    const REDIS_PREFIX_WX_ACCOUNT = 'sy' . SY_PROJECT . '10000_';
+    const REDIS_PREFIX_WX_ACCOUNT = self::REDIS_PREFIX_COMMON . '10000_';
     /**
      * redis-前缀-微信开放平台账号
      */
-    const REDIS_PREFIX_WX_COMPONENT_ACCOUNT = 'sy' . SY_PROJECT . '10001_';
+    const REDIS_PREFIX_WX_COMPONENT_ACCOUNT = self::REDIS_PREFIX_COMMON . '10001_';
     /**
      * redis-前缀-微信开放平台授权公众号
      */
-    const REDIS_PREFIX_WX_COMPONENT_AUTHORIZER = 'sy' . SY_PROJECT . '10002_';
+    const REDIS_PREFIX_WX_COMPONENT_AUTHORIZER = self::REDIS_PREFIX_COMMON . '10002_';
     /**
      * redis-前缀-微信开放平台授权小程序代码保护密钥
      */
-    const REDIS_PREFIX_WX_COMPONENT_AUTHORIZER_CODE_SECRET = 'sy' . SY_PROJECT . '10003_';
+    const REDIS_PREFIX_WX_COMPONENT_AUTHORIZER_CODE_SECRET = self::REDIS_PREFIX_COMMON . '10003_';
     /**
      * redis-前缀-企业微信
      */
-    const REDIS_PREFIX_WX_CORP = 'sy' . SY_PROJECT . '10100_';
+    const REDIS_PREFIX_WX_CORP = self::REDIS_PREFIX_COMMON . '10100_';
     /**
      * redis-前缀-企业微信服务商账号
      */
-    const REDIS_PREFIX_WX_PROVIDER_CORP_ACCOUNT = 'sy' . SY_PROJECT . '10101_';
+    const REDIS_PREFIX_WX_PROVIDER_CORP_ACCOUNT = self::REDIS_PREFIX_COMMON . '10101_';
     /**
      * redis-前缀-企业微信服务商套件
      */
-    const REDIS_PREFIX_WX_PROVIDER_CORP_ACCOUNT_SUITE = 'sy' . SY_PROJECT . '10102_';
+    const REDIS_PREFIX_WX_PROVIDER_CORP_ACCOUNT_SUITE = self::REDIS_PREFIX_COMMON . '10102_';
     /**
      * redis-前缀-服务商授权企业微信
      */
-    const REDIS_PREFIX_WX_PROVIDER_CORP_AUTHORIZER = 'sy' . SY_PROJECT . '10103_';
+    const REDIS_PREFIX_WX_PROVIDER_CORP_AUTHORIZER = self::REDIS_PREFIX_COMMON . '10103_';
 
     /**
      * 微信开放平台-授权公众号状态-取消授权
